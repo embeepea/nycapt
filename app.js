@@ -3,6 +3,7 @@ var port_number = 3000;
 var databaseUrl = "test";
 var collections = ["filterPolygons", "postings", "edits"];
 var mongodb = require('mongodb');
+var sprintf = require('sprintf');
 var _ = require('underscore');
 var db = require("mongojs").connect(databaseUrl, collections);
 
@@ -16,12 +17,15 @@ function isPointInPoly(poly, pt){
 
 function polygonFilter(polygons) {
     return function(posting) {
+
         var i;
         for (i=0; i<polygons.length; ++i) {
             if (isPointInPoly(polygons[i].coords, [posting.Latitude,posting.Longitude])) {
+//if (posting.PostingID === "4278076072") { console.log("4278076072 is INSIDE a polygon"); }
                 return true;
             }
         }
+//if (posting.PostingID === "4278076072") { console.log("4278076072 is not inside a polygon"); }
         return false;
     };
 }
@@ -85,24 +89,57 @@ app.post('/filterPolygons', function(req, res) {
         res.send(JSON.stringify(filterPolygons));
     });
 });
+
+// Call the callback with a single argument which is an object containing a property
+// for each edit in the database; the property name is the PostingID, and the property
+// value is the edit object for that posting.
+function withEditsObj(callback) {
+    db.edits.find(function(err,edits) {
+//console.log('number of edits found is: ' + edits.length);
+        var editsObj = {};
+        _.each(edits, function(edit) {
+            editsObj[edit["PostingID"]] = edit;
+        });
+        callback(editsObj);
+    });
+}
+
 app.get('/postings', function(req, res) {
     db.filterPolygons.find(function(err,filterPolygons) {
         db.postings.find(function(err,postings) {
             postings = _.filter(postings, polygonFilter(filterPolygons));
             postings = _.filter(postings, postingPredicate);
-            db.edits.findOne(function(err,edits) {
-                if (edits) {
-                    _.each(postings, function(posting) {
-                        if (edits[posting]) {
-                            _.extend(posting, edits);
-                        }
-                    });
-                }
+            withEditsObj(function(edits) {
+                _.each(postings, function(posting) {
+                    if (edits[posting.PostingID]) {
+//console.log('doing an edit now');
+//console.log(edits[posting.PostingID]);
+                        _.each(edits[posting.PostingID], function(v,k) {
+                            if (k !== "PostingID" && k !== "_id") {
+//var vv = edits[posting.PostingID][k];
+//console.log(sprintf('key:%s   value:%s', k, vv));
+                                posting[k] = v;
+                            }
+                        });
+                    }
+                });
                 res.send(JSON.stringify(postings));
             });
         });
     });
 });
+
+app.post('/settags', function(req, res) {
+    var PostingID = req.body.PostingID;
+    var tags = req.body.tags;
+    db.edits.findAndModify({
+        query: { "PostingID":PostingID },
+        update: { $set: { Tags : tags } }
+    }, function() {
+        res.send(JSON.stringify({'status' : 'OKyes'}));
+    });
+});
+
 
 console.log('listening on port ' + port_number);
 

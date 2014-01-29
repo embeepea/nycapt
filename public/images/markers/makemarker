@@ -1,0 +1,28 @@
+#! /usr/bin/env node
+//-*- mode: js2;-*-
+
+var sprintf = require('sprintf').sprintf;
+var exec = require('child_process').exec;
+var fs = require('fs');
+var mustache = require('mustache');
+
+var width = process.argv[2];
+var height = process.argv[3];
+var color = process.argv[4];
+
+var svgfile = sprintf("marker-%sx%s-%s.svg", width, height, color);
+var pngfile = sprintf("marker-%sx%s-%s.png", width, height, color);
+
+fs.readFile('marker.tpl.svg', function(err,contents) {
+    var svg = mustache.render(contents.toString(), {
+        'width' : width,
+        'height' : height,
+        'color' : color
+    });
+    fs.writeFile(svgfile, svg, function (err) {
+        exec("convert -transparent white " + svgfile + " " + pngfile, function() {
+            fs.unlink(svgfile);
+            console.log('wrote ' + pngfile);
+        });
+    });
+});

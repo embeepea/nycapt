@@ -1,0 +1,16 @@
+#! /usr/bin/env node
+//-*- mode: js2;-*-
+
+var databaseUrl = "test";
+var collections = ["postings", "edits"];
+var mongodb = require('mongodb');
+var _ = require('underscore');
+var sprintf = require('sprintf').sprintf;
+var fs = require('fs');
+var db = require("mongojs").connect(databaseUrl, collections);
+
+db.postings.remove(function() {
+    db.edits.remove(function() {
+        db.close();
+    });
+});

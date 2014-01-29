@@ -9,23 +9,23 @@
   <script src="/map.js"></script>
 </head>
 <body>
+<!--
   <div class="container">
     <% include navbar %>
-
+-->
     <div id="mapcontainer">
       <div id="map"></div>
       <div id="messagearea"></div>
+    </div>
 <!--
       <div id="buttons">
         <button type="button" class="additem btn btn-default"><i class="fa fa-plus"></i></button>
         <button type="button" class="googleclick btn btn-default"><i class="fa fa-google-plus"></i></button>
       </div>
--->
     </div>
+-->
 
-  </div>
 </body>
-<script type="text/javascript">setActiveMenuItem("map");</script>
 
 <script type="text/template" id="stationpopup">
   <div class="stationpopup">
@@ -37,53 +37,32 @@
 <script type="text/template" id="postingpopup">
   <div class="postingpopup">
     <div class="header">
-      <div class="left">
-        <div class="title">{{{postingtitle}}}</div>
-        <div class="posteddate">{{{posteddate}}}</div>
-        <div class="url"><a target="_blank" href="{{{postingurl}}}">open web page</a></div>
-      </div>
-      <div class="right">
-        <div class="imagethumb">{{{imagethumb}}}</div>
-      </div>
+      <table width="100%">
+        <tr>
+          <td class="left" align="left">
+            <div class="title">{{{postingtitle}}}</div>
+            <div class="posteddate">{{{posteddate}}}</div>
+            <div class="url"><a target="_blank" href="{{{postingurl}}}">open web page</a></div>
+          </td>
+          <td class="right" align="right">
+            <div class="imagethumb">{{{imagethumb}}}</div>
+            <div class="ask">${{{ask}}}</div>
+            <div class="bedrooms">{{{bedrooms}}} BR</div>
+          </td>
+        </tr>
+      </table>
     </div>
     <div class="content">
-      <div class="left">
-        <div class="ask">${{{ask}}}</div>
-        <div class="bedrooms">{{{bedrooms}}} BR</div>
-      </div>
-      <div class="right">
-        <!-- -->
-      </div>
+      {{#tags}}
+      <div class="checkbox"><input type="checkbox" {{checked}} id="{{id}}" onchange="do_checkbox(event);"> <span class="label">{{title}}</span></div>
+      {{/tags}}
+      <p>
+        <div>
+          lat,lng=[ {{{lat}}},{{{lng}}} ]<br>
+          PostingID= {{{postingid}}}
+        </div>
     </div>
   </div>
 </script>
-<!--
-Great Apt to Rent for Super Bowl Weekend
-            open web page
 
-$2500                  Jan 25 2013 18:35
-2 Bedrooms
-
-
-* fav
-* share
-* new
-
-
-
-
-
-        "Ask": "2500", 
-        "Bedrooms": "2", 
-        "CategoryID": "39", 
-        "ImageThumb": "http://images.craigslist.org/00t0t_cklohpGQ6Y7_50x50c.jpg", 
-        "Latitude": 40.680231999999997, 
-        "Longitude": -73.968221, 
-        "PostedDate": "1390955576", 
-        "PostingID": "4309234808", 
-        "PostingTitle": "Great Apt to Rent for Super Bowl Weekend", 
-        "PostingURL": "/brk/sub/4309234808.html"
-
-
--->
 </html>

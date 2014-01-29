@@ -1,8 +1,17 @@
+html, body, #mapcontainer {
+   height:100%;
+   width:100%;
+   padding:0px;
+   margin:0px;
+} 
+
+/*
 #mapcontainer {
-  position: relative;
-  height: 800px;
+  height: 100%;
   width: 100%;
 }
+*/
+
 #map {
   height: 100%;
   width: 100%;
@@ -70,27 +79,18 @@
 
 .postingpopup .header {
     width: 100%;
-    height: 70px;
-    position: relative;
 }
-.postingpopup .header .left {
-    position: absolute;
-    left: 0
-}
-.postingpopup .header .right {
-    position: absolute;
-    right: 0
-}
+
+
+
 
 .postingpopup .content {
     width: 100%;
     position: relative;
 }
-.postingpopup .content .left {
-    position: absolute;
-    left: 0
-}
-.postingpopup .content .right {
-    position: absolute;
-    right: 0
+
+.postingpopup .checkbox .label {
+  color: #000;
+  background-color: #fff;
+  font-size: 1.2em;
 }

@@ -2,12 +2,14 @@
 //-*- mode: js2;-*-
 
 var databaseUrl = "test";
-var collections = ["postings"];
+var collections = ["postings", "edits"];
 var mongodb = require('mongodb');
 var _ = require('underscore');
 var sprintf = require('sprintf').sprintf;
 var fs = require('fs');
 var db = require("mongojs").connect(databaseUrl, collections);
+
+var importDate = Number(((new Date()).getTime()/1000).toFixed(0)); // seconds since the epoch
 
 function loadpostings(postings) {
     var nPostings = postings.length;
@@ -30,6 +32,16 @@ function loadpostings(postings) {
                         postingDone();
                     } else {
                         console.log(sprintf("saved posting id=%s", posting.PostingID));
+                        postingDone();
+                    }
+                });
+                db.edits.save({
+                    'PostingID'  : posting.PostingID,
+                    'ImportDate' : importDate,
+                    'Tags'       : ["new"]
+                }, function(err,value) {
+                    if (err) {
+                        console.log(sprintf("error saving edits for id=%s", posting.PostingID));
                         postingDone();
                     }
                 });
