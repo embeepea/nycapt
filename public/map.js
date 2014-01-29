@@ -185,9 +185,6 @@
             var dy = a.Latitude - b.Latitude;
             var dx = a.Longitude - b.Longitude;
             var close = (dx*dx + dy*dy) <= epsilon*epsilon;
-
-//console.log('a=['+a.Lng+','+a.Lat+']; b=['+b.Lng+','+b.Lat+']; eps='+epsilon+' ==> ' + close);
-
             return close;
         }
     
@@ -198,7 +195,6 @@
                 postings[0].markerLatitude = postings[0].Latitude;
                 postings[0].markerLongitude = postings[0].Longitude;
             } else {
-console.log('spreading ' + n + ' markers');
                 // compute the centroid of the n postings in this group
                 _.each(postings, function(p) {
                     centroid.Latitude += p.Latitude;
