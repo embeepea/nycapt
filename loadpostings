@@ -1,0 +1,54 @@
+#! /usr/bin/env node
+//-*- mode: js2;-*-
+
+var databaseUrl = "test";
+var collections = ["postings"];
+var mongodb = require('mongodb');
+var _ = require('underscore');
+var sprintf = require('sprintf').sprintf;
+var fs = require('fs');
+var db = require("mongojs").connect(databaseUrl, collections);
+
+
+//db.postings.find({"PostingID": "4276450172xx"}, function(err, result) {
+//    console.log(result);
+//    db.close();
+//});
+
+function loadpostings(postings) {
+    var nPostings = postings.length;
+    function postingDone() {
+        nPostings = nPostings - 1;
+        if (nPostings <= 0) {
+            db.close();
+        }
+    }
+    _.each(postings, function(posting) {
+        db.postings.find({"PostingID": posting.PostingID}, function(err, result) {
+            if (result.length > 0) {
+                // a posting with this ID is already in the database; skip it
+                console.log(sprintf("posting %s has already been loaded", posting.PostingID));
+                postingDone();
+            } else {
+                db.postings.save(posting, function(err,value) {
+                    if (err) {
+                        console.log(sprintf("error saving posting id=%s", posting.PostingID));
+                        postingDone();
+                    } else {
+                        console.log(sprintf("saved posting id=%s", posting.PostingID));
+                        postingDone();
+                    }
+                });
+            }
+        });
+    });
+    postingDone();
+}
+
+fs.readFile('./postings.json', 'utf8', function (err, data) {
+    if (err) {
+        console.log('Error: ' + err);
+        return;
+    }
+    loadpostings(JSON.parse(data));
+});
