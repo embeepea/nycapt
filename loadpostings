@@ -9,12 +9,6 @@ var sprintf = require('sprintf').sprintf;
 var fs = require('fs');
 var db = require("mongojs").connect(databaseUrl, collections);
 
-
-//db.postings.find({"PostingID": "4276450172xx"}, function(err, result) {
-//    console.log(result);
-//    db.close();
-//});
-
 function loadpostings(postings) {
     var nPostings = postings.length;
     function postingDone() {

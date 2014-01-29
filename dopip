@@ -1,0 +1,24 @@
+#! /usr/bin/env node
+//-*- mode: js2;-*-
+
+function isPointInPoly(poly, pt){
+    for(var c = false, i = -1, l = poly.length, j = l - 1; ++i < l; j = i)
+        ((poly[i].lat <= pt.lat && pt.lat < poly[j].lat) || (poly[j].lat <= pt.lat && pt.lat < poly[i].lat))
+        && (pt.lng < (poly[j].lng - poly[i].lng) * (pt.lat - poly[i].lat) / (poly[j].lat - poly[i].lat) + poly[i].lng)
+        && (c = !c);
+    return c;
+}
+
+var polygon = [ 
+    [ 40.71005225842899, -73.93532752990723 ],
+    [ 40.712654662428214, -73.91661643981934 ],
+    [ 40.705367674921376, -73.8991069793701 ],
+    [ 40.69235321394892, -73.90254020690918 ],
+    [ 40.68831821478072, -73.92640113830565 ],
+    [ 40.701984159668676, -73.94837379455566 ]
+];
+
+var pt = { 'lng' : -73.917972, 'lat' : 40.700572 };
+
+
+console.log(isPointInPoly(polygon, pt));
