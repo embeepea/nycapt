@@ -1,0 +1,197 @@
+#! /usr/bin/env node
+//-*- mode: js2;-*-
+
+// curl 'http://newyork.craigslist.org/jsonsearch/sub?useMap=1&zoomToPosting=4290877252&catAbb=sub&query=&minAsk=&maxAsk=&bedrooms=&housing_type=&excats=' | python -m json.tool > bar.json
+
+// curl 'http://newyork.craigslist.org/jsonsearch/sub/brk?useMap=1&zoomToPosting=&catAbb=sub&query=&minAsk=&maxAsk=&bedrooms=&housing_type=&excats=' | python -m json.tool > foo.json
+
+//var http = require('http');
+var http = require('follow-redirects').http;
+
+//var Promise = require('promise');
+
+var Q = require('q');
+var _ = require('underscore');
+var sprintf = require('sprintf').sprintf;
+
+//var read = Promise.denodeify(require('fs').readFile)
+//
+//read('foo.txt', 'utf8')
+//  .then(function (fileContent) {
+//  })
+
+
+
+
+
+
+
+function getHttp(host, path, callback) {
+    var request = http.request({
+        'host': host,
+        'path': path
+    }, function (res) {
+        var data = '';
+        res.on('data', function (chunk) {
+            data += chunk;
+        });
+        res.on('end', function () {
+            callback(data);
+            
+        });
+    });
+    request.on('error', function (e) {
+        console.log(e.message);
+    });
+    request.end();
+}
+
+function getHttpJson(host, path, callback) {
+    getHttp(host, path, function (data) {
+        callback( JSON.parse(data) );
+    });
+}
+
+function getHttpJsonPromise(host, path) {
+    var deferred = Q.defer();
+    getHttpJson(host, path, function(data) {
+        deferred.resolve(data);
+    });
+    return deferred.promise;
+}
+
+//FS.readFile("foo.txt", "utf-8", function (error, text) {
+//    if (error) {
+//        deferred.reject(new Error(error));
+//    } else {
+//        deferred.resolve(text);
+//    }
+//});
+//return deferred.promise;
+
+
+//var getHttpJsonPromise = Promise.denodeify(getHttpJson);
+//
+
+var listings = [];
+
+var nOutstanding = 0;
+
+var elapsedSecs = 0;
+var timeout;
+var progress = function() {
+    elapsedSecs = elapsedSecs + 5;
+    console.log(sprintf("%1d requests outstanding after %1d secs", nOutstanding, elapsedSecs));
+    timeout = setTimeout(progress, 5000);
+};
+timeout = setTimeout(progress, 5000);
+
+function doOutput() {
+    if (timeout !== undefined) { clearTimeout(timeout); }
+    listings = listings.sort(function(a,b) {
+        return parseInt(b["PostedDate"],10) - parseInt(a["PostedDate"],10);
+    });
+    console.log(JSON.stringify(listings));
+}
+
+
+function incrOutstanding() {
+    nOutstanding = nOutstanding + 1;
+    //console.log(sprintf("+%3d", nOutstanding));
+}
+function decrOutstanding() {
+    nOutstanding = nOutstanding - 1;
+    //console.log(sprintf("-%3d", nOutstanding));
+    if (nOutstanding <= 0) {
+        doOutput();
+    }
+}
+
+
+
+var promises = [];
+
+function processJsonResponse(json) {
+    var promise;
+    _.each(json[0], function(item) {
+        var u = item["url"];
+        if (item["PostingTitle"] !== undefined) {
+            listings.push(item);
+        } else if (item["GeoCluster"] !== undefined) {
+            incrOutstanding();
+            promises.push(getHttpJsonPromise("newyork.craigslist.org", item["url"])
+                          .timeout(15000)
+                          .then(processJsonResponse)
+                          .fail(function(reason) {
+                              //console.log('cluster failed: ' + u);
+                              //console.log('    reason: ' + reason);
+                              decrOutstanding();
+                           })
+                         );
+        }
+    });
+    decrOutstanding();
+}
+
+incrOutstanding();
+
+
+
+getHttpJson("newyork.craigslist.org",
+            "/jsonsearch/sub/brk?useMap=1&zoomToPosting=&catAbb=sub&query=&minAsk=&maxAsk=2999&zoom=12",
+            processJsonResponse);
+
+function printItems(items) {
+    var i, d;
+    for (i=0; i<items.length; ++i) {
+        item = items[i];
+        if (item["PostingTitle"] !== undefined) {
+            d = new Date(parseInt(item["PostedDate"])*1000);
+            console.log( sprintf("%25s  %s", d.toString(), item["PostingTitle"]) );
+        }
+    }
+}
+
+
+//setTimeout(function() {
+//    console.log('after 15s: got ' + listings.length + ' listings:');
+//    console.log('had ' + promises.length + ' promises');
+//    _.each(promises, function(promise) {
+//        if (! promise.isFulfilled()) {
+//            console.log(promise.inspect());
+//        }
+//    });
+//    printItems(listings);
+//}, 15000);
+
+//var one = getHttpJsonPromise("localhost", "/~mbp/one.json").then(function(data) {
+//    jsons.push(data[0]);
+//});
+//var two = getHttpJsonPromise("localhost", "/~mbp/two.json").then(function(data) {
+//    jsons.push(data[0]);
+//});
+//
+//Q.all([one,two]).then(function() {
+//    console.log(jsons);
+//});
+
+//setTimeout(function() {
+  //  console.log("your time is up");
+//}, 3000);
+
+//getHttp("newyork.craigslist.org",
+//        "/jsonsearch/sub/brk?useMap=1&zoomToPosting=&catAbb=sub&query=&minAsk=&maxAsk=2999",
+//        function(data) {
+//            console.log( data.toString() );
+//        });
+
+
+// getHttpJson("newyork.craigslist.org",
+//         "/jsonsearch/sub/brk?useMap=1&zoomToPosting=&catAbb=sub&query=&minAsk=&maxAsk=2999&zoom=12",
+//         function(json) {
+//             printList(json)
+//             //console.log( json[0].length );
+//             //console.log( json[1].length );
+//             //console.log( json );
+//         });
+// 

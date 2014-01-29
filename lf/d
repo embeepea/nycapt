@@ -1,0 +1,9 @@
+#! /usr/bin/env node
+//-*- mode: js2;-*-
+
+var fs = require('fs');
+
+
+fs.writeFile('foo.out', "hey foo this is a test\n", function (err) {
+    console.log(err);
+});

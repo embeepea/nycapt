@@ -1,0 +1,410 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<rdf:RDF
+ xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+ xmlns="http://purl.org/rss/1.0/"
+ xmlns:ev="http://purl.org/rss/1.0/modules/event/"
+ xmlns:content="http://purl.org/rss/1.0/modules/content/"
+ xmlns:taxo="http://purl.org/rss/1.0/modules/taxonomy/"
+ xmlns:dc="http://purl.org/dc/elements/1.1/"
+ xmlns:syn="http://purl.org/rss/1.0/modules/syndication/"
+ xmlns:dcterms="http://purl.org/dc/terms/"
+ xmlns:admin="http://webns.net/mvcb/"
+>
+
+<channel rdf:about="http://newyork.craigslist.org/search/sub/brk?catAbb=sub&#x26;amp;format=rss&#x26;amp;maxAsk=2999&#x26;amp;query=williamsburg%20-superbowl">
+<title>craigslist new york | sublets &#x26;amp; temporary search &#x22;williamsburg -superbowl&#x22;</title>
+<link>http://newyork.craigslist.org/search/sub/brk?catAbb=sub&#x26;amp;maxAsk=2999&#x26;amp;query=williamsburg%20-superbowl</link>
+<description></description>
+<dc:language>en-us</dc:language>
+<dc:rights>&#x26;copy; 2014 &#x3C;span class=&#x22;desktop&#x22;&#x3E;craigslist&#x3C;/span&#x3E;&#x3C;span class=&#x22;mobile&#x22;&#x3E;CL&#x3C;/span&#x3E;</dc:rights>
+<dc:publisher>robot@craigslist.org</dc:publisher>
+<dc:creator>robot@craigslist.org</dc:creator>
+<dc:source>http://newyork.craigslist.org/search/sub/brk?catAbb=sub&#x26;amp;format=rss&#x26;amp;maxAsk=2999&#x26;amp;query=williamsburg%20-superbowl</dc:source>
+<dc:title>craigslist new york | sublets &#x26;amp; temporary search &#x22;williamsburg -superbowl&#x22;</dc:title>
+<dc:type>Collection</dc:type>
+<syn:updateBase>2014-01-24T16:15:39-08:00</syn:updateBase>
+<syn:updateFrequency>1</syn:updateFrequency>
+<syn:updatePeriod>hourly</syn:updatePeriod>
+<items>
+ <rdf:Seq>
+  <rdf:li rdf:resource="http://newyork.craigslist.org/brk/sub/4303165507.html" />
+  <rdf:li rdf:resource="http://newyork.craigslist.org/brk/sub/4303115483.html" />
+  <rdf:li rdf:resource="http://newyork.craigslist.org/brk/sub/4303113920.html" />
+  <rdf:li rdf:resource="http://newyork.craigslist.org/brk/sub/4303069308.html" />
+  <rdf:li rdf:resource="http://newyork.craigslist.org/brk/sub/4303068346.html" />
+  <rdf:li rdf:resource="http://newyork.craigslist.org/brk/sub/4302974048.html" />
+  <rdf:li rdf:resource="http://newyork.craigslist.org/brk/sub/4302971229.html" />
+  <rdf:li rdf:resource="http://newyork.craigslist.org/brk/sub/4302937955.html" />
+  <rdf:li rdf:resource="http://newyork.craigslist.org/brk/sub/4302830103.html" />
+  <rdf:li rdf:resource="http://newyork.craigslist.org/brk/sub/4302766093.html" />
+  <rdf:li rdf:resource="http://newyork.craigslist.org/brk/sub/4302729243.html" />
+  <rdf:li rdf:resource="http://newyork.craigslist.org/brk/sub/4302713487.html" />
+  <rdf:li rdf:resource="http://newyork.craigslist.org/brk/sub/4302699366.html" />
+  <rdf:li rdf:resource="http://newyork.craigslist.org/brk/sub/4302653664.html" />
+  <rdf:li rdf:resource="http://newyork.craigslist.org/brk/sub/4302637314.html" />
+  <rdf:li rdf:resource="http://newyork.craigslist.org/brk/sub/4299723291.html" />
+  <rdf:li rdf:resource="http://newyork.craigslist.org/brk/sub/4298858439.html" />
+  <rdf:li rdf:resource="http://newyork.craigslist.org/brk/sub/4298833383.html" />
+  <rdf:li rdf:resource="http://newyork.craigslist.org/brk/sub/4296010542.html" />
+  <rdf:li rdf:resource="http://newyork.craigslist.org/brk/sub/4295199224.html" />
+  <rdf:li rdf:resource="http://newyork.craigslist.org/brk/sub/4294617955.html" />
+  <rdf:li rdf:resource="http://newyork.craigslist.org/brk/sub/4292496668.html" />
+  <rdf:li rdf:resource="http://newyork.craigslist.org/brk/sub/4292478887.html" />
+  <rdf:li rdf:resource="http://newyork.craigslist.org/brk/sub/4292331359.html" />
+  <rdf:li rdf:resource="http://newyork.craigslist.org/brk/sub/4288632753.html" />
+ </rdf:Seq>
+</items>
+</channel>
+<item rdf:about="http://newyork.craigslist.org/brk/sub/4303165507.html">
+<title><![CDATA[Room avail in 2 bedroom S. Williamsburg 1060 + Utilities (S. 4th &amp; Hewes) &#x0024;1060 1bd]]></title>
+<link>http://newyork.craigslist.org/brk/sub/4303165507.html</link>
+<description><![CDATA[Huge room with lots of natural light in South Williamsburg. Steps to the JMZ and a ten minute walk from the Lorimer L stop. Females preferred but of course guys will be considered as well. This room feels almost like having your own studio but the ki [...]]]></description>
+<dc:date>2014-01-24T15:15:21-08:00</dc:date>
+<dc:language>en-us</dc:language>
+<dc:rights>&#x26;copy; 2014 &#x3C;span class=&#x22;desktop&#x22;&#x3E;craigslist&#x3C;/span&#x3E;&#x3C;span class=&#x22;mobile&#x22;&#x3E;CL&#x3C;/span&#x3E;</dc:rights>
+<dc:source>http://newyork.craigslist.org/brk/sub/4303165507.html</dc:source>
+<dc:title><![CDATA[Room avail in 2 bedroom S. Williamsburg 1060 + Utilities (S. 4th &amp; Hewes) &#x0024;1060 1bd]]></dc:title>
+<dc:type>text</dc:type>
+<dcterms:issued>2014-01-24T15:15:21-08:00</dcterms:issued>
+</item>
+<item rdf:about="http://newyork.craigslist.org/brk/sub/4303115483.html">
+<title><![CDATA[Beautiful Serene Live/Work Loft Available NOW (East Williamsburg) &#x0024;2400]]></title>
+<link>http://newyork.craigslist.org/brk/sub/4303115483.html</link>
+<description><![CDATA[Available now Bright Beautiful very Clean Live/Work Loft Space in East Williamsburg, Of the Morgan stop of the L only train 15 minutes from Manhattan. 
+This Space is simple and Bright quiet and Clean equipped with compact kitchen , high ceilings, Bea [...]]]></description>
+<dc:date>2014-01-24T14:41:41-08:00</dc:date>
+<dc:language>en-us</dc:language>
+<dc:rights>&#x26;copy; 2014 &#x3C;span class=&#x22;desktop&#x22;&#x3E;craigslist&#x3C;/span&#x3E;&#x3C;span class=&#x22;mobile&#x22;&#x3E;CL&#x3C;/span&#x3E;</dc:rights>
+<dc:source>http://newyork.craigslist.org/brk/sub/4303115483.html</dc:source>
+<dc:title><![CDATA[Beautiful Serene Live/Work Loft Available NOW (East Williamsburg) &#x0024;2400]]></dc:title>
+<dc:type>text</dc:type>
+<dcterms:issued>2014-01-24T14:41:41-08:00</dcterms:issued>
+</item>
+<item rdf:about="http://newyork.craigslist.org/brk/sub/4303113920.html">
+<title><![CDATA[Amazing Beautiful Ample Artist Live/Work LOFT (East Williamsburg) &#x0024;2350]]></title>
+<link>http://newyork.craigslist.org/brk/sub/4303113920.html</link>
+<description><![CDATA[This beautiful Space is furnished with large kitchen area ,12ft high ceilings and new hard wood floors with two bedrooms with large windows 50''HD TV and adjustable heating/cooling!!!. 
+If you're a business professional or Mix Media artist this space [...]]]></description>
+<dc:date>2014-01-24T14:40:40-08:00</dc:date>
+<dc:language>en-us</dc:language>
+<dc:rights>&#x26;copy; 2014 &#x3C;span class=&#x22;desktop&#x22;&#x3E;craigslist&#x3C;/span&#x3E;&#x3C;span class=&#x22;mobile&#x22;&#x3E;CL&#x3C;/span&#x3E;</dc:rights>
+<dc:source>http://newyork.craigslist.org/brk/sub/4303113920.html</dc:source>
+<dc:title><![CDATA[Amazing Beautiful Ample Artist Live/Work LOFT (East Williamsburg) &#x0024;2350]]></dc:title>
+<dc:type>text</dc:type>
+<dcterms:issued>2014-01-24T14:40:40-08:00</dcterms:issued>
+</item>
+<item rdf:about="http://newyork.craigslist.org/brk/sub/4303069308.html">
+<title><![CDATA[$1650 Furnished Room in Williamsburg  (Williamsburg, NY) &#x0024;1650 1bd]]></title>
+<link>http://newyork.craigslist.org/brk/sub/4303069308.html</link>
+<description><![CDATA[This spacious bedroom comes equipped with a comfortable queen-sized bed, a bedside table, and a wardrobe for clothes, hangers and belongings. There is exposed brick in this particular bedroom and the living room - making it very chic. Looking for 3 m [...]]]></description>
+<dc:date>2014-01-24T14:12:05-08:00</dc:date>
+<dc:language>en-us</dc:language>
+<dc:rights>&#x26;copy; 2014 &#x3C;span class=&#x22;desktop&#x22;&#x3E;craigslist&#x3C;/span&#x3E;&#x3C;span class=&#x22;mobile&#x22;&#x3E;CL&#x3C;/span&#x3E;</dc:rights>
+<dc:source>http://newyork.craigslist.org/brk/sub/4303069308.html</dc:source>
+<dc:title><![CDATA[$1650 Furnished Room in Williamsburg  (Williamsburg, NY) &#x0024;1650 1bd]]></dc:title>
+<dc:type>text</dc:type>
+<dcterms:issued>2014-01-24T14:12:05-08:00</dcterms:issued>
+</item>
+<item rdf:about="http://newyork.craigslist.org/brk/sub/4303068346.html">
+<title><![CDATA[2 berm with large outdoor area to sublet (Greenpoint/Williamsburg) &#x0024;2250 2bd]]></title>
+<link>http://newyork.craigslist.org/brk/sub/4303068346.html</link>
+<description><![CDATA[I am moving upstate for a short period this winter and want to sublet my great 2 bedroom apartment while I am away. The space would be awesome for a couple or two female roommates who love north Brooklyn. I am flexible on the dates but it can be roug [...]]]></description>
+<dc:date>2014-01-24T14:11:31-08:00</dc:date>
+<dc:language>en-us</dc:language>
+<dc:rights>&#x26;copy; 2014 &#x3C;span class=&#x22;desktop&#x22;&#x3E;craigslist&#x3C;/span&#x3E;&#x3C;span class=&#x22;mobile&#x22;&#x3E;CL&#x3C;/span&#x3E;</dc:rights>
+<dc:source>http://newyork.craigslist.org/brk/sub/4303068346.html</dc:source>
+<dc:title><![CDATA[2 berm with large outdoor area to sublet (Greenpoint/Williamsburg) &#x0024;2250 2bd]]></dc:title>
+<dc:type>text</dc:type>
+<dcterms:issued>2014-01-24T14:11:31-08:00</dcterms:issued>
+</item>
+<item rdf:about="http://newyork.craigslist.org/brk/sub/4302974048.html">
+<title><![CDATA[Loft Room Avail Feb 15 (Williamsburg) &#x0024;1150 6bd 200sqft]]></title>
+<link>http://newyork.craigslist.org/brk/sub/4302974048.html</link>
+<description><![CDATA[1 room available in our 6 bedroom 3000 sq ft. loft located in southeast part of Williamsburg. Looking for a 3 month commitment minimum. 
+This room is for one person only. You will be sharing the loft with male, 38 (art director/graphic designer), fem [...]]]></description>
+<dc:date>2014-01-24T13:15:51-08:00</dc:date>
+<dc:language>en-us</dc:language>
+<dc:rights>&#x26;copy; 2014 &#x3C;span class=&#x22;desktop&#x22;&#x3E;craigslist&#x3C;/span&#x3E;&#x3C;span class=&#x22;mobile&#x22;&#x3E;CL&#x3C;/span&#x3E;</dc:rights>
+<dc:source>http://newyork.craigslist.org/brk/sub/4302974048.html</dc:source>
+<dc:title><![CDATA[Loft Room Avail Feb 15 (Williamsburg) &#x0024;1150 6bd 200sqft]]></dc:title>
+<dc:type>text</dc:type>
+<dcterms:issued>2014-01-24T13:15:51-08:00</dcterms:issued>
+</item>
+<item rdf:about="http://newyork.craigslist.org/brk/sub/4302971229.html">
+<title><![CDATA[Loft available for Super Bowl weekend (Dumbo) &#x0024;450]]></title>
+<link>http://newyork.craigslist.org/brk/sub/4302971229.html</link>
+<description><![CDATA[Spacious 1200 sq ft loft in beautiful waterfront Brooklyn neighborhood 
+One subway stop from Manhattan 
+Building is right next to Manhattan and Brooklyn bridges with easy driving access to NJ and surrounding area 
+About the Loft - 
+Can sleep 4 
+Open  [...]]]></description>
+<dc:date>2014-01-24T13:14:14-08:00</dc:date>
+<dc:language>en-us</dc:language>
+<dc:rights>&#x26;copy; 2014 &#x3C;span class=&#x22;desktop&#x22;&#x3E;craigslist&#x3C;/span&#x3E;&#x3C;span class=&#x22;mobile&#x22;&#x3E;CL&#x3C;/span&#x3E;</dc:rights>
+<dc:source>http://newyork.craigslist.org/brk/sub/4302971229.html</dc:source>
+<dc:title><![CDATA[Loft available for Super Bowl weekend (Dumbo) &#x0024;450]]></dc:title>
+<dc:type>text</dc:type>
+<dcterms:issued>2014-01-24T13:14:14-08:00</dcterms:issued>
+</item>
+<item rdf:about="http://newyork.craigslist.org/brk/sub/4302937955.html">
+<title><![CDATA[Beautiful Room on Fort Greene Park!  (Fort Greene pl and De Kalb) &#x0024;1100 1bd 200sqft]]></title>
+<link>http://newyork.craigslist.org/brk/sub/4302937955.html</link>
+<description><![CDATA[There is a room available starting Feb 1st for a 3 month sublet in my 3 bedroom apartment on Fort Greene Park by all trains, food and what-not. Its a large, by New York standards (13ft x 13ft), unfurnished room with two closets, one normal sized and  [...]]]></description>
+<dc:date>2014-01-24T12:55:19-08:00</dc:date>
+<dc:language>en-us</dc:language>
+<dc:rights>&#x26;copy; 2014 &#x3C;span class=&#x22;desktop&#x22;&#x3E;craigslist&#x3C;/span&#x3E;&#x3C;span class=&#x22;mobile&#x22;&#x3E;CL&#x3C;/span&#x3E;</dc:rights>
+<dc:source>http://newyork.craigslist.org/brk/sub/4302937955.html</dc:source>
+<dc:title><![CDATA[Beautiful Room on Fort Greene Park!  (Fort Greene pl and De Kalb) &#x0024;1100 1bd 200sqft]]></dc:title>
+<dc:type>text</dc:type>
+<dcterms:issued>2014-01-24T12:55:19-08:00</dcterms:issued>
+</item>
+<item rdf:about="http://newyork.craigslist.org/brk/sub/4302830103.html">
+<title><![CDATA[LUXURY-RENOVATED LOFT 2BR- TRUE LOFT, ELEV/LAUNDRY/ROOFDECK (Williamsburg) &#x0024;2995 2bd]]></title>
+<link>http://newyork.craigslist.org/brk/sub/4302830103.html</link>
+<description><![CDATA[BEAUTIFUL 2BR/1BA~~ INDUSTRIAL LOFT w/ LUXURY RENO! 
+DRIGGS AVENUE @ S 3rd ST. 
+$2995/mo 
+AMAZING LOFT BUILDING NEXT TO WILLIAMSBURG BIRDGE! A FIVE MINUTE RIDE TO ESSEX/DELANCEY! THE VERY FIRST STOP IN BROOKLYN OVER THE WILLIAMSBURG BRIDGE! 
+HUGE IND [...]]]></description>
+<dc:date>2014-01-24T11:56:33-08:00</dc:date>
+<dc:language>en-us</dc:language>
+<dc:rights>&#x26;copy; 2014 &#x3C;span class=&#x22;desktop&#x22;&#x3E;craigslist&#x3C;/span&#x3E;&#x3C;span class=&#x22;mobile&#x22;&#x3E;CL&#x3C;/span&#x3E;</dc:rights>
+<dc:source>http://newyork.craigslist.org/brk/sub/4302830103.html</dc:source>
+<dc:title><![CDATA[LUXURY-RENOVATED LOFT 2BR- TRUE LOFT, ELEV/LAUNDRY/ROOFDECK (Williamsburg) &#x0024;2995 2bd]]></dc:title>
+<dc:type>text</dc:type>
+<dcterms:issued>2014-01-24T11:56:33-08:00</dcterms:issued>
+</item>
+<item rdf:about="http://newyork.craigslist.org/brk/sub/4302766093.html">
+<title><![CDATA[1 Room Available March 1st*&*Great Location** 15 min to NYC (E. Williamsburg/ Bushwick) &#x0024;850 1bd]]></title>
+<link>http://newyork.craigslist.org/brk/sub/4302766093.html</link>
+<description><![CDATA[Looking for female roommate only 
+1 Room available in beautifully renovated townhouse*Utilities are included* All stainless steel appliances. 
+Its a steal. 10 minute subway ride to NYC. J/M/Z to Kosciuszko St. station. Centrally located to all- groce [...]]]></description>
+<dc:date>2014-01-24T11:21:15-08:00</dc:date>
+<dc:language>en-us</dc:language>
+<dc:rights>&#x26;copy; 2014 &#x3C;span class=&#x22;desktop&#x22;&#x3E;craigslist&#x3C;/span&#x3E;&#x3C;span class=&#x22;mobile&#x22;&#x3E;CL&#x3C;/span&#x3E;</dc:rights>
+<dc:source>http://newyork.craigslist.org/brk/sub/4302766093.html</dc:source>
+<dc:title><![CDATA[1 Room Available March 1st*&*Great Location** 15 min to NYC (E. Williamsburg/ Bushwick) &#x0024;850 1bd]]></dc:title>
+<dc:type>text</dc:type>
+<dcterms:issued>2014-01-24T11:21:15-08:00</dcterms:issued>
+</item>
+<item rdf:about="http://newyork.craigslist.org/brk/sub/4302729243.html">
+<title><![CDATA[Furnished --- Month to month ---- all utilities included (Williamsburg L train) &#x0024;1850]]></title>
+<link>http://newyork.craigslist.org/brk/sub/4302729243.html</link>
+<description><![CDATA[Brand new building - great deals - huge spaces with high ceilings + great views 
+Call Erin 713.202.4226 ]]></description>
+<dc:date>2014-01-24T10:59:39-08:00</dc:date>
+<dc:language>en-us</dc:language>
+<dc:rights>&#x26;copy; 2014 &#x3C;span class=&#x22;desktop&#x22;&#x3E;craigslist&#x3C;/span&#x3E;&#x3C;span class=&#x22;mobile&#x22;&#x3E;CL&#x3C;/span&#x3E;</dc:rights>
+<dc:source>http://newyork.craigslist.org/brk/sub/4302729243.html</dc:source>
+<dc:title><![CDATA[Furnished --- Month to month ---- all utilities included (Williamsburg L train) &#x0024;1850]]></dc:title>
+<dc:type>text</dc:type>
+<dcterms:issued>2014-01-24T10:59:39-08:00</dcterms:issued>
+</item>
+<item rdf:about="http://newyork.craigslist.org/brk/sub/4302713487.html">
+<title><![CDATA[Great 2 bdr nicely furn heart of Wilburg avail Feb 1 !! (Bedford L Williamsburg) 2bd]]></title>
+<link>http://newyork.craigslist.org/brk/sub/4302713487.html</link>
+<description><![CDATA[Hi I have a great 2 bedroom apt I am subletting while I am in school for the next year. Rent is $2200 a month plus utilities. The dates of the sublet are from Feb 1 2014 - Jan 31 2015. The apartment will be available starting Jan 25 if you need to mo [...]]]></description>
+<dc:date>2014-01-24T10:51:19-08:00</dc:date>
+<dc:language>en-us</dc:language>
+<dc:rights>&#x26;copy; 2014 &#x3C;span class=&#x22;desktop&#x22;&#x3E;craigslist&#x3C;/span&#x3E;&#x3C;span class=&#x22;mobile&#x22;&#x3E;CL&#x3C;/span&#x3E;</dc:rights>
+<dc:source>http://newyork.craigslist.org/brk/sub/4302713487.html</dc:source>
+<dc:title><![CDATA[Great 2 bdr nicely furn heart of Wilburg avail Feb 1 !! (Bedford L Williamsburg) 2bd]]></dc:title>
+<dc:type>text</dc:type>
+<dcterms:issued>2014-01-24T10:51:19-08:00</dcterms:issued>
+</item>
+<item rdf:about="http://newyork.craigslist.org/brk/sub/4302699366.html">
+<title><![CDATA[Big room available (williamsburg) &#x0024;1200 1bd]]></title>
+<link>http://newyork.craigslist.org/brk/sub/4302699366.html</link>
+<description><![CDATA[room available in a 2br apt with eat in kitchen and living room. short or long term. 
+partially furnished with futon, side table, and desk. 
+great neighborhood. right between the Graham and Grand stop on the L on bushwick ave. 
+please no couples or p [...]]]></description>
+<dc:date>2014-01-24T10:43:53-08:00</dc:date>
+<dc:language>en-us</dc:language>
+<dc:rights>&#x26;copy; 2014 &#x3C;span class=&#x22;desktop&#x22;&#x3E;craigslist&#x3C;/span&#x3E;&#x3C;span class=&#x22;mobile&#x22;&#x3E;CL&#x3C;/span&#x3E;</dc:rights>
+<dc:source>http://newyork.craigslist.org/brk/sub/4302699366.html</dc:source>
+<dc:title><![CDATA[Big room available (williamsburg) &#x0024;1200 1bd]]></dc:title>
+<dc:type>text</dc:type>
+<dcterms:issued>2014-01-24T10:43:53-08:00</dcterms:issued>
+</item>
+<item rdf:about="http://newyork.craigslist.org/brk/sub/4302653664.html">
+<title><![CDATA[1 Bedroom available Feb. 8th to March 10th (Bushwick/East Williamsburg) &#x0024;1000 1bd]]></title>
+<link>http://newyork.craigslist.org/brk/sub/4302653664.html</link>
+<description><![CDATA[I am going abroad for one month so my spacious room is available for sublet. It is located in a 4 bedroom 2 bathroom, 2 story apartment. Private roof top, it might be a little cold for that, but hey we got a grill ;) You will have access to free laun [...]]]></description>
+<dc:date>2014-01-24T10:20:05-08:00</dc:date>
+<dc:language>en-us</dc:language>
+<dc:rights>&#x26;copy; 2014 &#x3C;span class=&#x22;desktop&#x22;&#x3E;craigslist&#x3C;/span&#x3E;&#x3C;span class=&#x22;mobile&#x22;&#x3E;CL&#x3C;/span&#x3E;</dc:rights>
+<dc:source>http://newyork.craigslist.org/brk/sub/4302653664.html</dc:source>
+<dc:title><![CDATA[1 Bedroom available Feb. 8th to March 10th (Bushwick/East Williamsburg) &#x0024;1000 1bd]]></dc:title>
+<dc:type>text</dc:type>
+<dcterms:issued>2014-01-24T10:20:05-08:00</dcterms:issued>
+</item>
+<item rdf:about="http://newyork.craigslist.org/brk/sub/4302637314.html">
+<title><![CDATA[Awesome Room for Rent in Cool, Clean, Sweet Williamsburg Apartment!!!! (north williamsburg) &#x0024;1200]]></title>
+<link>http://newyork.craigslist.org/brk/sub/4302637314.html</link>
+<description><![CDATA[Room for rent located in North Williamsburg, Brooklyn. Graham Avenue L Train stop. Recently constructed apartment, clean and spacious. 
+Amenities include: 
+-Utilities Included (Internet, Electric, Heat) 
+-Laundry Room 
+-Dishwasher 
+-Street Parking Ea [...]]]></description>
+<dc:date>2014-01-24T10:11:35-08:00</dc:date>
+<dc:language>en-us</dc:language>
+<dc:rights>&#x26;copy; 2014 &#x3C;span class=&#x22;desktop&#x22;&#x3E;craigslist&#x3C;/span&#x3E;&#x3C;span class=&#x22;mobile&#x22;&#x3E;CL&#x3C;/span&#x3E;</dc:rights>
+<dc:source>http://newyork.craigslist.org/brk/sub/4302637314.html</dc:source>
+<dc:title><![CDATA[Awesome Room for Rent in Cool, Clean, Sweet Williamsburg Apartment!!!! (north williamsburg) &#x0024;1200]]></dc:title>
+<dc:type>text</dc:type>
+<dcterms:issued>2014-01-24T10:11:35-08:00</dcterms:issued>
+</item>
+<item rdf:about="http://newyork.craigslist.org/brk/sub/4299723291.html">
+<title><![CDATA[Available Now - 3 Bedroom w/ Skyline View, Artist Bldg, Morgan L train (East Williamsburg) &#x0024;2675 3bd 925sqft]]></title>
+<link>http://newyork.craigslist.org/brk/sub/4299723291.html</link>
+<description><![CDATA[Three bedroom apartment and live/work space available in a professional and media/arts oriented building. Unfurnished. All three bedrooms are private and professionally constructed. All bedrooms have windows into the main space. Faces northwest for a [...]]]></description>
+<dc:date>2014-01-22T11:49:43-08:00</dc:date>
+<dc:language>en-us</dc:language>
+<dc:rights>&#x26;copy; 2014 &#x3C;span class=&#x22;desktop&#x22;&#x3E;craigslist&#x3C;/span&#x3E;&#x3C;span class=&#x22;mobile&#x22;&#x3E;CL&#x3C;/span&#x3E;</dc:rights>
+<dc:source>http://newyork.craigslist.org/brk/sub/4299723291.html</dc:source>
+<dc:title><![CDATA[Available Now - 3 Bedroom w/ Skyline View, Artist Bldg, Morgan L train (East Williamsburg) &#x0024;2675 3bd 925sqft]]></dc:title>
+<dc:type>text</dc:type>
+<dcterms:issued>2014-01-22T11:49:43-08:00</dcterms:issued>
+</item>
+<item rdf:about="http://newyork.craigslist.org/brk/sub/4298858439.html">
+<title><![CDATA[$350 weekends/$475 Weekly/$1,400 monthly (Bedstuy, Williamsburg) 1bd]]></title>
+<link>http://newyork.craigslist.org/brk/sub/4298858439.html</link>
+<description><![CDATA[My name is Miss More, Available on the first floor of my brownstone apt, is a large unfurnished 2 room studio space for rent, private entrance, can rent weekly or monthly. Utilities included and free wifi. Share bathroom only with one person on the f [...]]]></description>
+<dc:date>2014-01-21T20:32:33-08:00</dc:date>
+<dc:language>en-us</dc:language>
+<dc:rights>&#x26;copy; 2014 &#x3C;span class=&#x22;desktop&#x22;&#x3E;craigslist&#x3C;/span&#x3E;&#x3C;span class=&#x22;mobile&#x22;&#x3E;CL&#x3C;/span&#x3E;</dc:rights>
+<dc:source>http://newyork.craigslist.org/brk/sub/4298858439.html</dc:source>
+<dc:title><![CDATA[$350 weekends/$475 Weekly/$1,400 monthly (Bedstuy, Williamsburg) 1bd]]></dc:title>
+<dc:type>text</dc:type>
+<dcterms:issued>2014-01-21T20:32:33-08:00</dcterms:issued>
+</item>
+<item rdf:about="http://newyork.craigslist.org/brk/sub/4298833383.html">
+<title><![CDATA[1 Bedroom in REAL Williamsburg (prime williamsburg) &#x0024;960 1bd]]></title>
+<link>http://newyork.craigslist.org/brk/sub/4298833383.html</link>
+<description><![CDATA[Subletting my one bedroom in 5br/2bth house located in Williamsburg 
+starting from Feb 1st to Aug 31st. 
+Has a full size bed, desk and built in closet. 
+Access to kitchen, backyard, laundry in building. 
+3 Min walk to L-Lorimer & G-Metropolitan 
+Prim [...]]]></description>
+<dc:date>2014-01-21T20:03:59-08:00</dc:date>
+<dc:language>en-us</dc:language>
+<dc:rights>&#x26;copy; 2014 &#x3C;span class=&#x22;desktop&#x22;&#x3E;craigslist&#x3C;/span&#x3E;&#x3C;span class=&#x22;mobile&#x22;&#x3E;CL&#x3C;/span&#x3E;</dc:rights>
+<dc:source>http://newyork.craigslist.org/brk/sub/4298833383.html</dc:source>
+<dc:title><![CDATA[1 Bedroom in REAL Williamsburg (prime williamsburg) &#x0024;960 1bd]]></dc:title>
+<dc:type>text</dc:type>
+<dcterms:issued>2014-01-21T20:03:59-08:00</dcterms:issued>
+</item>
+<item rdf:about="http://newyork.craigslist.org/brk/sub/4296010542.html">
+<title><![CDATA[Spacious and artistic loft (East Williamsburg) &#x0024;1450]]></title>
+<link>http://newyork.craigslist.org/brk/sub/4296010542.html</link>
+<description><![CDATA[Hi there 
+I'm looking for a roomate to share a large East Willamsburg loft near the Morgan Street L with one other person. 
+About the apartment: 
+1. Over 900 sq feet 
+2. Open space plan with two bedrooms and two workspaces (i use one as a painting st [...]]]></description>
+<dc:date>2014-01-20T08:16:05-08:00</dc:date>
+<dc:language>en-us</dc:language>
+<dc:rights>&#x26;copy; 2014 &#x3C;span class=&#x22;desktop&#x22;&#x3E;craigslist&#x3C;/span&#x3E;&#x3C;span class=&#x22;mobile&#x22;&#x3E;CL&#x3C;/span&#x3E;</dc:rights>
+<dc:source>http://newyork.craigslist.org/brk/sub/4296010542.html</dc:source>
+<dc:title><![CDATA[Spacious and artistic loft (East Williamsburg) &#x0024;1450]]></dc:title>
+<dc:type>text</dc:type>
+<dcterms:issued>2014-01-20T08:16:05-08:00</dcterms:issued>
+</item>
+<item rdf:about="http://newyork.craigslist.org/brk/sub/4295199224.html">
+<title><![CDATA[Williamsburg - Grand and Havemeyer - 2bd, 2 bt, Patio  (Williamsburg) &#x0024;1800 2bd]]></title>
+<link>http://newyork.craigslist.org/brk/sub/4295199224.html</link>
+<description><![CDATA[Seeking SUBLET for room in 2br share 
+Room overlooks Grand Street 
+5 min walk from Lorimer L/G and the JMZ trains 
+Zip Car lot downstairs 
+Citi Bike terminal one black away 
+1400+sqft 
+Partly Furnished 
+Private bathroom 
+Washer + Dryer in unit 
+Chef' [...]]]></description>
+<dc:date>2014-01-19T14:56:25-08:00</dc:date>
+<dc:language>en-us</dc:language>
+<dc:rights>&#x26;copy; 2014 &#x3C;span class=&#x22;desktop&#x22;&#x3E;craigslist&#x3C;/span&#x3E;&#x3C;span class=&#x22;mobile&#x22;&#x3E;CL&#x3C;/span&#x3E;</dc:rights>
+<dc:source>http://newyork.craigslist.org/brk/sub/4295199224.html</dc:source>
+<dc:title><![CDATA[Williamsburg - Grand and Havemeyer - 2bd, 2 bt, Patio  (Williamsburg) &#x0024;1800 2bd]]></dc:title>
+<dc:type>text</dc:type>
+<dcterms:issued>2014-01-19T14:56:25-08:00</dcterms:issued>
+</item>
+<item rdf:about="http://newyork.craigslist.org/brk/sub/4294617955.html">
+<title><![CDATA[Immediate or Feb 1 HUGE room, backyard, 20 min to Manhattan (Bushwick / Williamsburg) &#x0024;1075 3bd]]></title>
+<link>http://newyork.craigslist.org/brk/sub/4294617955.html</link>
+<description><![CDATA[AVAILABLE NOW or Feb 1 We have 1 bedroom for sublet in 3 bedroom apt. A couple blocks from the Montrose L and Grand L stops, Williamsburg/Bushwick area. 20 minutes to Union Square in Manhattan. Beautiful, giant backyard just for our apartment! 
+The r [...]]]></description>
+<dc:date>2014-01-19T08:27:37-08:00</dc:date>
+<dc:language>en-us</dc:language>
+<dc:rights>&#x26;copy; 2014 &#x3C;span class=&#x22;desktop&#x22;&#x3E;craigslist&#x3C;/span&#x3E;&#x3C;span class=&#x22;mobile&#x22;&#x3E;CL&#x3C;/span&#x3E;</dc:rights>
+<dc:source>http://newyork.craigslist.org/brk/sub/4294617955.html</dc:source>
+<dc:title><![CDATA[Immediate or Feb 1 HUGE room, backyard, 20 min to Manhattan (Bushwick / Williamsburg) &#x0024;1075 3bd]]></dc:title>
+<dc:type>text</dc:type>
+<dcterms:issued>2014-01-19T08:27:37-08:00</dcterms:issued>
+</item>
+<item rdf:about="http://newyork.craigslist.org/brk/sub/4292496668.html">
+<title><![CDATA[AFFORDABLE STUDIO IN THE HEART OF WILLIAMSBURG! (williamsburg) &#x0024;450]]></title>
+<link>http://newyork.craigslist.org/brk/sub/4292496668.html</link>
+<description><![CDATA[Studio, queen size bed. You won't find a more economical ,clean, newly furnished apartment in the heart of it all. Located out your door are all the restaurants and bars you need to visit during your stay. The subway to Manhattan a short walk down Be [...]]]></description>
+<dc:date>2014-01-17T15:52:07-08:00</dc:date>
+<dc:language>en-us</dc:language>
+<dc:rights>&#x26;copy; 2014 &#x3C;span class=&#x22;desktop&#x22;&#x3E;craigslist&#x3C;/span&#x3E;&#x3C;span class=&#x22;mobile&#x22;&#x3E;CL&#x3C;/span&#x3E;</dc:rights>
+<dc:source>http://newyork.craigslist.org/brk/sub/4292496668.html</dc:source>
+<dc:title><![CDATA[AFFORDABLE STUDIO IN THE HEART OF WILLIAMSBURG! (williamsburg) &#x0024;450]]></dc:title>
+<dc:type>text</dc:type>
+<dcterms:issued>2014-01-17T15:52:07-08:00</dcterms:issued>
+</item>
+<item rdf:about="http://newyork.craigslist.org/brk/sub/4292478887.html">
+<title><![CDATA[AFFORDABLE STUDIO IN THE HEART OF WILLIAMSBURG! (williamsburg) &#x0024;450]]></title>
+<link>http://newyork.craigslist.org/brk/sub/4292478887.html</link>
+<description><![CDATA[Studio, queen size bed. You won't find a more economical ,clean, newly furnished apartment in the heart of it all. Located out your door are all the restaurants and bars you need to visit during your stay. The subway to Manhattan a short walk down Be [...]]]></description>
+<dc:date>2014-01-17T15:39:10-08:00</dc:date>
+<dc:language>en-us</dc:language>
+<dc:rights>&#x26;copy; 2014 &#x3C;span class=&#x22;desktop&#x22;&#x3E;craigslist&#x3C;/span&#x3E;&#x3C;span class=&#x22;mobile&#x22;&#x3E;CL&#x3C;/span&#x3E;</dc:rights>
+<dc:source>http://newyork.craigslist.org/brk/sub/4292478887.html</dc:source>
+<dc:title><![CDATA[AFFORDABLE STUDIO IN THE HEART OF WILLIAMSBURG! (williamsburg) &#x0024;450]]></dc:title>
+<dc:type>text</dc:type>
+<dcterms:issued>2014-01-17T15:39:10-08:00</dcterms:issued>
+</item>
+<item rdf:about="http://newyork.craigslist.org/brk/sub/4292331359.html">
+<title><![CDATA[Williamsburg FEMALES ONLY - Grand and Havemeyer - 2bd, 2 bt, Patio (Williamsburg) &#x0024;1800 2bd 1400sqft]]></title>
+<link>http://newyork.craigslist.org/brk/sub/4292331359.html</link>
+<description><![CDATA[Seeking SUBLET for room in 2br share 
+Room overlooks Grand Street 
+5 min walk from Lorimer L/G and the JMZ trains 
+Zip Car lot downstairs 
+Citi Bike terminal one black away 
+1400+sqft 
+Partly Furnished 
+Private bathroom 
+Washer + Dryer in unit 
+Chef' [...]]]></description>
+<dc:date>2014-01-17T14:02:28-08:00</dc:date>
+<dc:language>en-us</dc:language>
+<dc:rights>&#x26;copy; 2014 &#x3C;span class=&#x22;desktop&#x22;&#x3E;craigslist&#x3C;/span&#x3E;&#x3C;span class=&#x22;mobile&#x22;&#x3E;CL&#x3C;/span&#x3E;</dc:rights>
+<dc:source>http://newyork.craigslist.org/brk/sub/4292331359.html</dc:source>
+<dc:title><![CDATA[Williamsburg FEMALES ONLY - Grand and Havemeyer - 2bd, 2 bt, Patio (Williamsburg) &#x0024;1800 2bd 1400sqft]]></dc:title>
+<dc:type>text</dc:type>
+<dcterms:issued>2014-01-17T14:02:28-08:00</dcterms:issued>
+</item>
+<item rdf:about="http://newyork.craigslist.org/brk/sub/4288632753.html">
+<title><![CDATA[Room in Williamsburg / Greenpoint at Graham Ave L  &#x0024;900 1250sqft]]></title>
+<link>http://newyork.craigslist.org/brk/sub/4288632753.html</link>
+<description><![CDATA[We're looking for a laid-back, responsible person to join our spacious, hidden gem of an apartment in Williamsburg/Greenpoint starting on February 15. You'll have the option of subletting for an entire year (until Feb 2015), but we'll do a 3-month su [...]]]></description>
+<dc:date>2014-01-15T08:49:16-08:00</dc:date>
+<dc:language>en-us</dc:language>
+<dc:rights>&#x26;copy; 2014 &#x3C;span class=&#x22;desktop&#x22;&#x3E;craigslist&#x3C;/span&#x3E;&#x3C;span class=&#x22;mobile&#x22;&#x3E;CL&#x3C;/span&#x3E;</dc:rights>
+<dc:source>http://newyork.craigslist.org/brk/sub/4288632753.html</dc:source>
+<dc:title><![CDATA[Room in Williamsburg / Greenpoint at Graham Ave L  &#x0024;900 1250sqft]]></dc:title>
+<dc:type>text</dc:type>
+<dcterms:issued>2014-01-15T08:49:16-08:00</dcterms:issued>
+</item>
+</rdf:RDF>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <% include common-head %>
+  <link rel="stylesheet" href="node_modules/leaflet/dist/leaflet.css" />
+  <link rel="stylesheet" href="node_modules/leaflet-draw/dist/leaflet.draw.css" />
+  <script src="/node_modules/leaflet/dist/leaflet.js"></script>
+  <script src="/node_modules/leaflet-draw/dist/leaflet.draw.js"></script>
+  <script src="/map.js"></script>
+</head>
+<body>
+  <div class="container">
+    <% include navbar %>
+
+    <div id="mapcontainer">
+      <div id="map"></div>
+      <div id="messagearea"></div>
+<!--
+      <div id="buttons">
+        <button type="button" class="additem btn btn-default"><i class="fa fa-plus"></i></button>
+        <button type="button" class="googleclick btn btn-default"><i class="fa fa-google-plus"></i></button>
+      </div>
+-->
+    </div>
+
+  </div>
+</body>
+<script type="text/javascript">setActiveMenuItem("map");</script>
+<script type="text/template" id="stationpopup">
+  <div class="stationpopup">
+    <div class="stationpopup name">{{{name}}}</div>
+    <div class="stationpopup routes">{{{routes}}}</div>
+  </div>
+</script>
+</html>

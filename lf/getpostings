@@ -1,0 +1,32 @@
+#! /usr/bin/env node
+//-*- mode: js2;-*-
+
+var craigslist = require('./craigslist');
+var sprintf = require('sprintf').sprintf;
+var _ = require('underscore');
+var fs = require('fs');
+
+craigslist.getPostings("newyork.craigslist.org",
+                       "/jsonsearch/sub/brk?maxAsk=2999",
+                       function (postings) {
+                           var counts = _.countBy(postings, function (item) {
+                               if (item["GeoCluster"] !== undefined) {
+                                   return "clusters";
+                               } else {
+                                   return "postings";
+                               }
+                           });
+                           console.log(sprintf("got %1d postings, %1d of which are clusters",
+                                               postings.length, 
+                                               counts.clusters !== undefined ? counts.clusters : 0));
+                           fs.writeFile('postings.json', JSON.stringify(postings));
+                           console.log('wrote results to postings.json');
+                       },
+                       {
+                           resolveClusters : true,
+                           requestTimeout: 10*60000,
+                           timeout: 10*60000,
+                           progressFunc : function(n) {
+                               console.log(sprintf("outstanding requests: %1d", n));
+                           }
+                       });

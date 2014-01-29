@@ -1,0 +1,33 @@
+#! /usr/bin/python
+
+import xml.etree.ElementTree as ET
+import urllib2
+import HTMLParser
+
+searchurl = 'http://newyork.craigslist.org/search/sub/brk?catAbb=sub&maxAsk=2999&query=williamsburg%20-superbowl%20-"super%20bowl"&format=rss'
+
+def geturlcontents(url):
+    f = urllib2.urlopen(searchurl)
+    lines = []
+    for line in f:
+        lines.append(line)
+    f.close()
+    return "".join(lines)
+
+contents = geturlcontents(searchurl)
+root = ET.fromstring(contents)
+
+#  #http://newyork.craigslist.org/search/sub/brk?catAbb=sub&maxAsk=2999&query=williamsburg%20-superbowl&format=rss
+#  
+#  
+#tree = ET.parse("foo.xml")
+#root = tree.getroot()
+
+h = HTMLParser.HTMLParser()
+
+for item in root.findall(".//{http://purl.org/rss/1.0/}item"):
+    title = h.unescape( item.find("{http://purl.org/rss/1.0/}title").text )
+    date = h.unescape( item.find("{http://purl.org/dc/elements/1.1/}date").text )
+    print "%25s  %s" % (date, title)
+
+                       
