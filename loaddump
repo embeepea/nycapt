@@ -1,0 +1,72 @@
+#! /usr/bin/env node
+//-*- mode: js2;-*-
+
+var databaseUrl = "test";
+var collections = ["postings", "edits", "filterPolygons"];
+var mongodb = require('mongodb');
+var _ = require('underscore');
+var sprintf = require('sprintf').sprintf;
+var fs = require('fs');
+var Q = require('q');
+var db = require("mongojs").connect(databaseUrl, collections);
+
+var dumpfile = 'dbdump.json';
+var dumpobj;
+
+var nOps = 0;
+
+function incrOps() {
+    ++nOps;
+}
+function decrOps() {
+    --nOps;
+    if (nOps <= 0) {
+        db.postings.find(function(err, postings) {
+            db.edits.find(function(err, edits) {
+                db.filterPolygons.find(function(err, filterPolygons) {
+                    console.log('loaded:');
+                    console.log(sprintf('    %1d filterPolygons', filterPolygons.length));
+                    console.log(sprintf('    %1d postings', postings.length));
+                    console.log(sprintf('    %1d edits', edits.length));
+                    db.close();
+                });
+            });
+        });
+    }
+}
+
+fs.readFile(dumpfile, function(err,contents) {
+    var dumpobj = JSON.parse(contents);
+
+    incrOps(); // increment nOps to avoid premature termination
+
+    incrOps();
+    db.filterPolygons.remove(function() { // delete the filterPolygons
+        _.each(dumpobj.filterPolygons, function (filterPolygon) { // load each filterPolygon
+            incrOps();
+            db.filterPolygons.save(filterPolygon, decrOps);
+        });
+        decrOps();
+    });
+
+    incrOps();
+    db.postings.remove(function() { // delete the postings
+        _.each(dumpobj.postings, function (posting) { // load each posting
+            incrOps();
+            db.postings.save(posting, decrOps);
+        });
+        decrOps();
+    });
+
+    incrOps();
+    db.edits.remove(function() { // delete the edits
+        _.each(dumpobj.edits, function (edit) { // load each edit
+            incrOps();
+            db.edits.save(edit, decrOps);
+        });
+        decrOps();
+    });
+
+    decrOps(); // decrement nOps to allow termination now that we've done all our Ops
+
+});
