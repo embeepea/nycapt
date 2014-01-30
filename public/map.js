@@ -116,6 +116,43 @@
             });
         }
 
+        function save_notes(posting) {
+            $.ajax({
+                type: 'POST',
+                data: JSON.stringify({
+                    'PostingID' : posting.PostingID,
+                    'notes'     : posting.Notes
+                }),
+                contentType: 'application/json',
+                url: '/postnotes',
+                success: function(data) {
+                    //...
+                }
+            });
+        }
+
+        var textarea_input_timeouts = {}; // hash to store timeouts for textarea widgets, keyed by postingid
+        window.do_textarea = function(e) {
+            // this function gets called on every keystroke in the input area ("oninput" event)
+            var id = e.target.id;
+            var checked = e.target.checked;
+            var m = id.match(/notes_([^_]+)/);
+            if (m) {
+                var postingid = m[1];
+                var posting = postingsByPostingID[postingid];
+                posting.Notes = $('#'+id).val();
+                // persist Notes value to server after 2 seconds of no typing
+                if (textarea_input_timeouts[postingid]) {
+                    clearTimeout(textarea_input_timeouts[postingid]);
+                }
+                textarea_input_timeouts[postingid] = setTimeout(function() {
+                    save_notes(posting);
+                    textarea_input_timeouts[postingid] = undefined;
+                }, 2000);
+            }
+        };
+
+
         window.do_checkbox = function(e) {
             var id = e.target.id;
             var checked = e.target.checked;
@@ -181,10 +218,11 @@
                 "posteddate"   : moment.unix(parseInt(posting.PostedDate)).format("D MMM HH:mm:ss"),  //(new Date(parseInt(posting.PostedDate)*1000)).toString(),
                 "postingtitle" : posting.PostingTitle,
                 "postingurl"   : "http://newyork.craigslist.org" + posting.PostingURL,
+                "postingid"    : posting.PostingID,
+                "notes"        : posting.Notes,
                 "tags"         : _.map(tags, function(tag) {
                     return {
-                        'id'      : 'cb_tag_' + posting.PostingID + '_' + tag,
-                        'title'   : tag,
+                        'tag'     : tag,
                         'checked' : _.contains(posting.Tags, tag) ? 'checked' : ''
                     };
                 }),

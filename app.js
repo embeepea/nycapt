@@ -17,15 +17,12 @@ function isPointInPoly(poly, pt){
 
 function polygonFilter(polygons) {
     return function(posting) {
-
         var i;
         for (i=0; i<polygons.length; ++i) {
             if (isPointInPoly(polygons[i].coords, [posting.Latitude,posting.Longitude])) {
-//if (posting.PostingID === "4278076072") { console.log("4278076072 is INSIDE a polygon"); }
                 return true;
             }
         }
-//if (posting.PostingID === "4278076072") { console.log("4278076072 is not inside a polygon"); }
         return false;
     };
 }
@@ -112,12 +109,8 @@ app.get('/postings', function(req, res) {
             withEditsObj(function(edits) {
                 _.each(postings, function(posting) {
                     if (edits[posting.PostingID]) {
-//console.log('doing an edit now');
-//console.log(edits[posting.PostingID]);
                         _.each(edits[posting.PostingID], function(v,k) {
                             if (k !== "PostingID" && k !== "_id") {
-//var vv = edits[posting.PostingID][k];
-//console.log(sprintf('key:%s   value:%s', k, vv));
                                 posting[k] = v;
                             }
                         });
@@ -135,6 +128,17 @@ app.post('/settags', function(req, res) {
     db.edits.findAndModify({
         query: { "PostingID":PostingID },
         update: { $set: { Tags : tags } }
+    }, function() {
+        res.send(JSON.stringify({'status' : 'OKyes'}));
+    });
+});
+
+app.post('/postnotes', function(req, res) {
+    var PostingID = req.body.PostingID;
+    var notes = req.body.notes;
+    db.edits.findAndModify({
+        query: { "PostingID":PostingID },
+        update: { $set: { Notes : notes } }
     }, function() {
         res.send(JSON.stringify({'status' : 'OKyes'}));
     });

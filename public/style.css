@@ -89,8 +89,14 @@ html, body, #mapcontainer {
     position: relative;
 }
 
-.postingpopup .checkbox .label {
+.postingpopup .label {
   color: #000;
   background-color: #fff;
   font-size: 1.2em;
+}
+
+.postingpopup .notes textarea {
+  width: 300px;
+  height: 180px;
+  resize: none;
 }
