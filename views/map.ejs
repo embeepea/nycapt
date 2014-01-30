@@ -45,6 +45,7 @@
             <div class="url"><a target="_blank" href="{{{postingurl}}}">open web page</a></div>
           </td>
           <td class="right" align="right">
+            <div class="pid">pid: {{{pid}}}</div>
             <div class="imagethumb">{{{imagethumb}}}</div>
             <div class="ask">${{{ask}}}</div>
             <div class="bedrooms">{{{bedrooms}}} BR</div>
@@ -56,11 +57,13 @@
       {{#tags}}
       <div class="checkbox"><input type="checkbox" {{checked}} id="{{id}}" onchange="do_checkbox(event);"> <span class="label">{{title}}</span></div>
       {{/tags}}
+<!--
       <p>
         <div>
           lat,lng=[ {{{lat}}},{{{lng}}} ]<br>
           PostingID= {{{postingid}}}
         </div>
+-->
     </div>
   </div>
 </script>

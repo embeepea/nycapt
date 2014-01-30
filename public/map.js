@@ -121,7 +121,11 @@
                     if (tag !== "new") {
                         // adding any tag other than "new" automatically removes the "new" tag
                         posting.Tags = _.without(posting.Tags, "new");
-                        // and moves the marker to the hidden group
+                        // and unsets the "new" checkbox on the dialog
+                        $('#cb_tag_'+postingid+'_new').removeAttr('checked');
+                    }
+                    if (tag === "hidden") {
+                        // adding the "hidden" tag moves the marker to the hidden group
                         postingLayerGroup.removeLayer(posting.marker);
                         hiddenPostingLayerGroup.addLayer(posting.marker);
                     }
@@ -175,9 +179,10 @@
                         'checked' : _.contains(posting.Tags, tag) ? 'checked' : ''
                     };
                 }),
+                "pid"       : posting.Pid,
                 "postingid" : posting.PostingID,
-                "lat" : posting.Latitude,
-                "lng" : posting.Longitude
+                "lat"       : posting.Latitude,
+                "lng"       : posting.Longitude
             });
         }
     

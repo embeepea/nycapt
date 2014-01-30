@@ -11,7 +11,22 @@ var db = require("mongojs").connect(databaseUrl, collections);
 
 var importDate = Number(((new Date()).getTime()/1000).toFixed(0)); // seconds since the epoch
 
-function loadpostings(postings) {
+function withPidGenerator(callback) {
+    var maxPid = 0;
+    db.postings.find(function(err,postings) {
+        _.each(postings, function(posting) {
+            if (posting.Pid > maxPid) {
+                maxPid = posting.Pid;
+            }
+        });
+        callback(function() {
+            ++maxPid;
+            return maxPid;
+        });
+    });
+}
+
+function loadpostings(postings, nextpid) {
     var nPostings = postings.length;
     function postingDone() {
         nPostings = nPostings - 1;
@@ -23,19 +38,21 @@ function loadpostings(postings) {
         db.postings.find({"PostingID": posting.PostingID}, function(err, result) {
             if (result.length > 0) {
                 // a posting with this ID is already in the database; skip it
-                console.log(sprintf("posting %s has already been loaded", posting.PostingID));
+                console.log(sprintf("posting [craigslist id=%s] has already been loaded", posting.PostingID));
                 postingDone();
             } else {
+                var pid = nextpid();
                 db.postings.save(posting, function(err,value) {
                     if (err) {
-                        console.log(sprintf("error saving posting id=%s", posting.PostingID));
+                        console.log(sprintf("error saving posting pid=%1d [craigslist id=%s]", pid, posting.PostingID));
                         postingDone();
                     } else {
-                        console.log(sprintf("saved posting id=%s", posting.PostingID));
+                        console.log(sprintf("saved posting pid=%1d [craigslist id=%s]", pid, posting.PostingID));
                         postingDone();
                     }
                 });
                 db.edits.save({
+                    'Pid'        : pid,
                     'PostingID'  : posting.PostingID,
                     'ImportDate' : importDate,
                     'Tags'       : ["new"]
@@ -56,5 +73,7 @@ fs.readFile('./postings.json', 'utf8', function (err, data) {
         console.log('Error: ' + err);
         return;
     }
-    loadpostings(JSON.parse(data));
+    withPidGenerator(function(nextpid) {
+        loadpostings(JSON.parse(data), nextpid);
+    });
 });
