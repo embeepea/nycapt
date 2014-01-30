@@ -18,7 +18,8 @@
     "follow-redirects": "0.0.3",
     "leaflet": "~0.7.2",
     "leaflet-draw": "~0.2.2",
-    "moment": "~2.5.1"
+    "moment": "~2.5.1",
+    "font-awesome": "~4.0.3"
   },
   "devDependencies": {
     "nodemon": "*",

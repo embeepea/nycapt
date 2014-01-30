@@ -32,8 +32,17 @@
     $(document).ready(function() {
 
         var map = L.map('map', {
-            'drawControl' : true
+            // options here
         }).setView([40.70, -73.97], 14);
+
+        map.addControl(new L.Control.Draw({
+            draw: {
+                polyline: false,
+                circle: false, // Turns off this drawing tool
+                rectangle: false,
+                marker: false
+            }
+        }));
 
         L.tileLayer("http://{s}.tile.cloudmade.com/" + cloudmade_api_key + "/997/256/{z}/{x}/{y}.png", {
             attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://cloudmade.com">CloudMade</a>',
@@ -332,6 +341,48 @@
             // Do whatever else you need to. (save to db, add to map etc)
             map.addLayer(layer);
         });
+
+
+
+        var messageAreaVisible;
+        var displayMessage = function(txt) {
+            $('#messagearea').html(txt);
+            if (!messageAreaVisible) {
+                $('#messagearea').fadeIn(100);
+            }
+            messageAreaVisible = true;
+        };
+        var hideMessage = function(txt) {
+            $('#messagearea').fadeOut(200);
+            messageAreaVisible = false;
+        };
+        $('#messagearea').hide();
+        messageAreaVisible = false;
+
+
+        var googling = false;
+        $("button.googleclick").click(function() {
+            if (googling) {
+                hideMessage();
+                googling = false;
+            } else {
+                displayMessage("Click in the map to open a location in Google Maps");
+                googling = true;
+            }
+        });
+
+        map.on('click', function (e) {
+            if (googling) {
+                hideMessage();
+                googling = false;
+                url = 'http://maps.google.com/?q='+e.latlng.lat+','+e.latlng.lng;
+                //url = 'https://www.google.com/maps/preview/@'+e.latlng.lat+','+e.latlng.lng+',15z';
+                window.open(url, '_blank');
+            }
+        });
+
+
+
         
         
     });
