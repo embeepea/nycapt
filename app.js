@@ -99,7 +99,7 @@ app.get('/postings', function(req, res) {
     db.filterPolygons.find(function(err,filterPolygons) {
         db.postings.find(function(err,postings) {
             postings = _.filter(postings, function(posting) {
-                if (parseInt(posting.Ask, 10) >= 3000) { return false; }
+                if (parseInt(posting.Ask, 10) >= 2700) { return false; }
                 if (posting.PostingTitle.match(/superbowl/gi)) { return false; }
                 if (posting.PostingTitle.match(/super\s+bowl/gi)) { return false; }
                 return true;

@@ -21,7 +21,7 @@ if (region != "brk" && region != "mnh" && region != "jsy") {
 var output_file = region + "-postings.json";
 
 craigslist.getPostings("newyork.craigslist.org",
-                       sprintf("/jsonsearch/sub/%s?maxAsk=2999", region),
+                       sprintf("/jsonsearch/sub/%s?maxAsk=2699", region),
                        function (postings) {
                            var counts = _.countBy(postings, function (item) {
                                if (item["GeoCluster"] !== undefined) {
