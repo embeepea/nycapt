@@ -6,8 +6,22 @@ var sprintf = require('sprintf').sprintf;
 var _ = require('underscore');
 var fs = require('fs');
 
+
+var region = "brk";
+
+if (process.argv.length > 2) {
+    region = process.argv[2];
+}
+
+if (region != "brk" && region != "mnh" && region != "jsy") {
+    console.log("region must be one of brk, mnh, or jsy");
+    process.exit();
+}
+
+var output_file = region + "-postings.json";
+
 craigslist.getPostings("newyork.craigslist.org",
-                       "/jsonsearch/sub/brk?maxAsk=2999",
+                       sprintf("/jsonsearch/sub/%s?maxAsk=2999", region),
                        function (postings) {
                            var counts = _.countBy(postings, function (item) {
                                if (item["GeoCluster"] !== undefined) {
@@ -19,8 +33,8 @@ craigslist.getPostings("newyork.craigslist.org",
                            console.log(sprintf("got %1d postings, %1d of which are clusters",
                                                postings.length, 
                                                counts.clusters !== undefined ? counts.clusters : 0));
-                           fs.writeFile('postings.json', JSON.stringify(postings));
-                           console.log('wrote results to postings.json');
+                           fs.writeFile(output_file, JSON.stringify(postings));
+                           console.log('wrote results to ' + output_file);
                        },
                        {
                            resolveClusters : true,
