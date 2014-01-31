@@ -3,7 +3,7 @@
 /*    var cloudmade_api_key = "a5b0d6c02084a00bd522ad1ee48e37f"; */
     var cloudmade_api_key = "8ee2a50541944fb9bcedded5165f09d9";
 
-    var subway_routes_to_show = ['L', 'Q', 'R', 'G', 'J', '2', '5'];
+    var subway_routes_to_show = ['A', 'C', 'E', 'L', 'N', 'Q', 'G', 'J', '4', '6'];
 
     var tags = ["new", "hidden", "favorite"];
 
