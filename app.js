@@ -27,12 +27,6 @@ function polygonFilter(polygons) {
     };
 }
 
-function postingPredicate(posting) {
-    if (posting.PostingTitle.match(/superbowl/gi)) { return false; }
-    if (posting.PostingTitle.match(/super\s+bowl/gi)) { return false; }
-    return true;
-}
-
 var express = require('express')
   , util = require('util')
   ;
@@ -104,8 +98,13 @@ function withEditsObj(callback) {
 app.get('/postings', function(req, res) {
     db.filterPolygons.find(function(err,filterPolygons) {
         db.postings.find(function(err,postings) {
+            postings = _.filter(postings, function(posting) {
+                if (parseInt(posting.Ask, 10) >= 3000) { return false; }
+                if (posting.PostingTitle.match(/superbowl/gi)) { return false; }
+                if (posting.PostingTitle.match(/super\s+bowl/gi)) { return false; }
+                return true;
+            });
             postings = _.filter(postings, polygonFilter(filterPolygons));
-            postings = _.filter(postings, postingPredicate);
             withEditsObj(function(edits) {
                 _.each(postings, function(posting) {
                     if (edits[posting.PostingID]) {
