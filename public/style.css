@@ -37,6 +37,28 @@ html, body, #mapcontainer {
   line-height: 30px;
   padding-left: 10px;
 }
+#hider-input-container {
+  position: relative;
+  bottom: 60px;
+  left: 20px;
+  width: 260px;
+  padding: 5px;
+  background-color: #ffffff;
+  opacity: 0.8;
+}
+
+#hider-input-container .label {
+  background-color: #ffffff;
+  color: #000000;
+  font-weight: bold;
+  font-size: 0.9em;
+}
+
+#hider-input-container input {
+  height: 20px;
+  width: 25px;
+  border: 2px solid black;
+}
 
 .item-entry .item-title label {
   font-width: bold;

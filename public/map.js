@@ -261,7 +261,7 @@
                 "ask"          : posting.Ask,
                 "bedrooms"     : posting.Bedrooms,
                 "imagethumb"   : posting.ImageThumb ? ('<img src="' + posting.ImageThumb + '">') : "",
-                "posteddate"   : moment.unix(parseInt(posting.PostedDate)).format("D MMM HH:mm:ss"),  //(new Date(parseInt(posting.PostedDate)*1000)).toString(),
+                "posteddate"   : moment.unix(parseInt(posting.PostedDate,10)).format("D MMM HH:mm:ss"),  //(new Date(parseInt(posting.PostedDate)*1000)).toString(),
                 "postingtitle" : posting.PostingTitle,
                 "postingurl"   : "http://newyork.craigslist.org" + posting.PostingURL,
                 "postingid"    : posting.PostingID,
@@ -367,9 +367,42 @@
             });
             postingLayerGroup = L.layerGroup(postingMarkers).addTo(map);
             layerControl.addOverlay(postingLayerGroup, "Postings");
-            //hiddenPostingLayerGroup = L.layerGroup(hiddenPostingMarkers).addTo(map);
             hiddenPostingLayerGroup = L.layerGroup(hiddenPostingMarkers);
             layerControl.addOverlay(hiddenPostingLayerGroup, "Hidden Postings");
+
+            function set_max_age_of_shown_postings(maxAge) {
+                if (maxAge === undefined) { maxAge = 999999; }
+                var now = Number(((new Date()).getTime()/1000).toFixed(0)); // seconds since the epoch
+                postingLayerGroup.clearLayers();
+                hiddenPostingLayerGroup.clearLayers();
+                _.each(postings, function(posting) {
+                    var age = (now - parseInt(posting.PostedDate, 10)) / 86400; // age in days; (86400 = 60*60*24 seconds/day)
+                    if (age <= maxAge) {
+                        if (_.contains(posting.Tags, "hidden")) {
+                            hiddenPostingLayerGroup.addLayer(posting.marker);
+                        } else {
+                            postingLayerGroup.addLayer(posting.marker);
+                        }
+                    }
+                });
+            }
+
+            var hide_text_timeout;
+            window.do_hide_text = function(event) {
+                // this function gets called on every keystroke in the input area ("oninput" event)
+                var newValue;
+                newValue = parseInt($('#hide_text_input').val(),10);
+                if (isNaN(newValue)) { newValue = undefined; }
+                if (hide_text_timeout) {
+                    clearTimeout(hide_text_timeout);
+                }
+                hide_text_timeout = setTimeout(function() {
+                    set_max_age_of_shown_postings(newValue);
+                    hide_text_timeout = undefined;
+                    $('#hide_text_input').val(newValue);
+                }, 2000);
+            };
+
         }
 
         $.ajax({
@@ -464,6 +497,7 @@
                 window.open(url, '_blank');
             }
         });
+
         
     });
     
