@@ -69,6 +69,52 @@
             }
         });
 
+        function createNeighborhoodsLayer(nhoods) {
+            var colors = ["#00e03c","#4462c8","#44c862","#54d6d6","#7d54fb","#fb7d54","#e14f9e","#fb6254","#fcf357","#cccccc"];
+            var color_i = 0;
+
+
+            function switchCoords(list) {
+                if (list.length == 0) { return list; }
+                if (typeof(list[0]) === "number") { return [ list[1], list[0] ]; }
+                return _.map(list, switchCoords);
+            }
+
+
+            var nhoodsLayers = [];
+
+
+            _.each(nhoods.features, function(feature) {
+                var gon;
+                if (feature.geometry.type === "Polygon") {
+                    nhoodsLayers.push(gon = L.polygon(switchCoords(feature.geometry.coordinates), {
+                        "fillColor" : colors[color_i++ % colors.length],
+                        "color" : "#000000",
+                        "weight" : 2
+                    }).bindLabel(feature.properties.NAME));
+                } else if (feature.geometry.type === "MultiPolygon") {
+                    nhoodsLayers.push(gon = L.multiPolygon(switchCoords(feature.geometry.coordinates),{
+                        "fillColor" : colors[color_i++ % colors.length],
+                        "color" : "#000000",
+                        "weight" : 2
+                    }).bindLabel(feature.properties.NAME));
+                }
+
+            });
+
+
+            layerControl.addOverlay(L.layerGroup(nhoodsLayers).addTo(map), "Neighborhoods");
+        }
+
+        $.ajax({
+            type: 'GET',
+            contentType: 'application/json',
+            url: '/nhoods/brooklyn-neighborhoods.json',
+            success: function(nhoods) {
+                createNeighborhoodsLayer(nhoods);
+            }
+        });
+
         function createStationsLayer(stations) {
             var stationCircles = [];
             _.each(stations, function(station) {
@@ -418,10 +464,6 @@
                 window.open(url, '_blank');
             }
         });
-
-
-
-        
         
     });
     
