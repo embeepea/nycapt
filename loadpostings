@@ -9,6 +9,19 @@ var sprintf = require('sprintf').sprintf;
 var fs = require('fs');
 var db = require("mongojs").connect(databaseUrl, collections);
 
+var region = "brk";
+
+if (process.argv.length > 2) {
+    region = process.argv[2];
+}
+
+if (region != "brk" && region != "mnh" && region != "jsy") {
+    console.log("region must be one of brk, mnh, or jsy");
+    process.exit();
+}
+
+var load_file = region + "-postings.json";
+
 var importDate = Number(((new Date()).getTime()/1000).toFixed(0)); // seconds since the epoch
 
 function withPidGenerator(callback) {
@@ -32,6 +45,7 @@ function loadpostings(postings, nextpid) {
         nPostings = nPostings - 1;
         if (nPostings <= 0) {
             db.close();
+            console.log('loaded postings from file: ' + load_file);
         }
     }
     _.each(postings, function(posting) {
@@ -68,7 +82,7 @@ function loadpostings(postings, nextpid) {
     postingDone();
 }
 
-fs.readFile('./postings.json', 'utf8', function (err, data) {
+fs.readFile(load_file, 'utf8', function (err, data) {
     if (err) {
         console.log('Error: ' + err);
         return;
