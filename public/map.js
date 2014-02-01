@@ -198,7 +198,6 @@
             }
         };
 
-
         window.do_checkbox = function(e) {
             var id = e.target.id;
             var checked = e.target.checked;
@@ -400,6 +399,43 @@
                     set_max_age_of_shown_postings(newValue);
                     hide_text_timeout = undefined;
                     $('#hide_text_input').val(newValue);
+                }, 2000);
+            };
+
+            function set_price_filter(minPrice,maxPrice) {
+                if (minPrice === undefined) { minPrice = 0; }
+                if (maxPrice === undefined) { maxPrice = 99999; }
+                postingLayerGroup.clearLayers();
+                hiddenPostingLayerGroup.clearLayers();
+                _.each(postings, function(posting) {
+                    var price = parseInt(posting.Ask,10);
+                    var checkPrice = (price!==0 && price!==undefined && !isNaN(price));
+                    if (checkPrice && maxPrice !== undefined && price < minPrice) { return; } // posting too expensive
+                    if (checkPrice && maxPrice !== undefined && price > maxPrice) { return; } // posting too cheap
+                    if (_.contains(posting.Tags, "hidden")) {
+                        hiddenPostingLayerGroup.addLayer(posting.marker);
+                    } else {
+                        postingLayerGroup.addLayer(posting.marker);
+                    }
+                });
+            }
+
+            var price_filter_timeout;
+            window.do_price_filter = function(event) {
+                // this function gets called on every keystroke in the input area ("oninput" event)
+                var newMin = parseInt($('#min_price_input').val(),10);
+                if (isNaN(newMin)) { newMin = undefined; }
+                var newMax = parseInt($('#max_price_input').val(),10);
+                if (isNaN(newMax)) { newMax = undefined; }
+
+                if (price_filter_timeout) {
+                    clearTimeout(price_filter_timeout);
+                }
+                price_filter_timeout = setTimeout(function() {
+                    set_price_filter(newMin,newMax);
+                    price_filter_timeout = undefined;
+                    $('#min_price_input').val(newMin);
+                    $('#max_price_input').val(newMax);
                 }, 2000);
             };
 
