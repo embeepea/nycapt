@@ -369,49 +369,26 @@
             hiddenPostingLayerGroup = L.layerGroup(hiddenPostingMarkers);
             layerControl.addOverlay(hiddenPostingLayerGroup, "Hidden Postings");
 
-            function set_max_age_of_shown_postings(maxAge) {
-                if (maxAge === undefined) { maxAge = 999999; }
+            function set_dynamic_filter() {
+                var maxAge = parseInt($('#hide_text_input').val(),10);
+                if (isNaN(maxAge)) { maxAge = 999999; }
                 var now = Number(((new Date()).getTime()/1000).toFixed(0)); // seconds since the epoch
-                postingLayerGroup.clearLayers();
-                hiddenPostingLayerGroup.clearLayers();
-                _.each(postings, function(posting) {
-                    var age = (now - parseInt(posting.PostedDate, 10)) / 86400; // age in days; (86400 = 60*60*24 seconds/day)
-                    if (age <= maxAge) {
-                        if (_.contains(posting.Tags, "hidden")) {
-                            hiddenPostingLayerGroup.addLayer(posting.marker);
-                        } else {
-                            postingLayerGroup.addLayer(posting.marker);
-                        }
-                    }
-                });
-            }
-
-            var hide_text_timeout;
-            window.do_hide_text = function(event) {
-                // this function gets called on every keystroke in the input area ("oninput" event)
-                var newValue;
-                newValue = parseInt($('#hide_text_input').val(),10);
-                if (isNaN(newValue)) { newValue = undefined; }
-                if (hide_text_timeout) {
-                    clearTimeout(hide_text_timeout);
-                }
-                hide_text_timeout = setTimeout(function() {
-                    set_max_age_of_shown_postings(newValue);
-                    hide_text_timeout = undefined;
-                    $('#hide_text_input').val(newValue);
-                }, 2000);
-            };
-
-            function set_price_filter(minPrice,maxPrice) {
-                if (minPrice === undefined) { minPrice = 0; }
-                if (maxPrice === undefined) { maxPrice = 99999; }
+                var minPrice = parseInt($('#min_price_input').val(),10);
+                if (isNaN(minPrice)) { minPrice = 0; }
+                var maxPrice = parseInt($('#max_price_input').val(),10);
+                if (isNaN(maxPrice)) { maxPrice = 999999; }
+                $('#hide_text_input').val(maxAge>0 && maxAge<999999 ? maxAge : "");
+                $('#min_price_input').val(minPrice>0 && minPrice<999999 ? minPrice : "");
+                $('#max_price_input').val(maxPrice>0 && maxPrice<999999 ? maxPrice : "");
                 postingLayerGroup.clearLayers();
                 hiddenPostingLayerGroup.clearLayers();
                 _.each(postings, function(posting) {
                     var price = parseInt(posting.Ask,10);
+                    var age = (now - parseInt(posting.PostedDate, 10)) / 86400; // age in days; (86400 = 60*60*24 seconds/day)
                     var checkPrice = (price!==0 && price!==undefined && !isNaN(price));
                     if (checkPrice && maxPrice !== undefined && price < minPrice) { return; } // posting too expensive
                     if (checkPrice && maxPrice !== undefined && price > maxPrice) { return; } // posting too cheap
+                    if (age > maxAge) { return; } // posting too old
                     if (_.contains(posting.Tags, "hidden")) {
                         hiddenPostingLayerGroup.addLayer(posting.marker);
                     } else {
@@ -420,22 +397,15 @@
                 });
             }
 
-            var price_filter_timeout;
-            window.do_price_filter = function(event) {
+            var dynamic_filter_timeout;
+            window.do_dynamic_filter = function(event) {
                 // this function gets called on every keystroke in the input area ("oninput" event)
-                var newMin = parseInt($('#min_price_input').val(),10);
-                if (isNaN(newMin)) { newMin = undefined; }
-                var newMax = parseInt($('#max_price_input').val(),10);
-                if (isNaN(newMax)) { newMax = undefined; }
-
-                if (price_filter_timeout) {
-                    clearTimeout(price_filter_timeout);
+                if (dynamic_filter_timeout) {
+                    clearTimeout(dynamic_filter_timeout);
                 }
-                price_filter_timeout = setTimeout(function() {
-                    set_price_filter(newMin,newMax);
-                    price_filter_timeout = undefined;
-                    $('#min_price_input').val(newMin);
-                    $('#max_price_input').val(newMax);
+                dynamic_filter_timeout = setTimeout(function() {
+                    set_dynamic_filter();
+                    dynamic_filter_timeout = undefined;
                 }, 2000);
             };
 
