@@ -59,7 +59,6 @@ function withPidManager(callback) {
 }
 
 function loadpostings(postings, pidManager) {
-console.log(pidManager);
     var nPostings = postings.length,
         nDone = 0;
     function postingDone() {
