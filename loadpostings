@@ -24,47 +24,69 @@ var load_file = region + "-postings.json";
 
 var importDate = Number(((new Date()).getTime()/1000).toFixed(0)); // seconds since the epoch
 
-function withPidGenerator(callback) {
-    var maxPid = 0;
-    db.postings.find(function(err,postings) {
-        _.each(postings, function(posting) {
-            if (posting.Pid > maxPid) {
-                maxPid = posting.Pid;
+/*
+ * `withPidManager` calls its callback with an object having the following properties which represent the
+ *     current state of the database:
+ * 
+ *              `postingIDByPid`: an object which maps Pids (the object's properties) to PostingIDs (property values)
+ *              `pidByPostingID`: ab object which maps PostingIDs (the object's properties) to Pids (property values)
+ *     `generatePid(postingID)` : a function that creates and returns a unique Pid for a postingID; this function
+ *                                does not modify any postings --- it simply returns the Pid value
+ */
+function withPidManager(callback) {
+    var maxPid = 0,
+        postingIDByPid = {},
+        pidByPostingID = {};
+    db.edits.find(function(err,edits) {
+        _.each(edits, function(edit) {
+            postingIDByPid[edit.Pid] = edit.PostingID;
+            pidByPostingID[edit.PostingID] = edit.Pid;
+            if (edit.Pid > maxPid) {
+                maxPid = edit.Pid;
             }
         });
-        callback(function() {
-            ++maxPid;
-            return maxPid;
+        callback({
+            'postingIDByPid' : postingIDByPid,
+            'pidByPostingID' : pidByPostingID,
+            'generatePid'    : function(postingID) {
+                ++maxPid;
+                postingIDByPid[maxPid] = postingID;
+                pidByPostingID[postingID] = maxPid;
+                return maxPid;
+            }
         });
     });
 }
 
-function loadpostings(postings, nextpid) {
-    var nPostings = postings.length;
+function loadpostings(postings, pidManager) {
+console.log(pidManager);
+    var nPostings = postings.length,
+        nDone = 0;
     function postingDone() {
-        nPostings = nPostings - 1;
-        if (nPostings <= 0) {
+        ++nDone;
+        if (nDone >= nPostings) {
             db.close();
-            console.log('loaded postings from file: ' + load_file);
+            console.log(sprintf('loaded %1d postings from file %s', nDone, load_file));
         }
     }
     _.each(postings, function(posting) {
         db.postings.find({"PostingID": posting.PostingID}, function(err, result) {
-            if (result.length > 0) {
-                // a posting with this ID is already in the database; skip it
-                console.log(sprintf("posting [craigslist id=%s] has already been loaded", posting.PostingID));
-                postingDone();
-            } else {
-                var pid = nextpid();
-                db.postings.save(posting, function(err,value) {
-                    if (err) {
-                        console.log(sprintf("error saving posting pid=%1d [craigslist id=%s]", pid, posting.PostingID));
-                        postingDone();
-                    } else {
-                        console.log(sprintf("saved posting pid=%1d [craigslist id=%s]", pid, posting.PostingID));
-                        postingDone();
-                    }
-                });
+            var pid,
+                isnew = false,
+                postedDateModified = false;
+            if (result.length === 1) {
+                // a posting with this ID is already in the database; get its pid
+                pid = pidManager.pidByPostingID[posting.PostingID];
+                // and determine how its PostedDate has changed, if it has
+                if (posting.PostedDate > result[0].PostedDate) {
+                    postedDateModified = "newer";
+                } else if (posting.PostedDate < result[0].PostedDate) {
+                    postedDateModified = "OLDER [!!??]";
+                }
+            } else if (result.length === 0) {
+                // this is a new posting; create a new edit doc for it
+                isnew = true;
+                pid = pidManager.generatePid(posting.PostingID);
                 db.edits.save({
                     'Pid'        : pid,
                     'PostingID'  : posting.PostingID,
@@ -73,13 +95,35 @@ function loadpostings(postings, nextpid) {
                 }, function(err,value) {
                     if (err) {
                         console.log(sprintf("error saving edits for id=%s", posting.PostingID));
-                        postingDone();
                     }
                 });
+            } else {
+                // print error!
+                console.log('error!');
+                console.log(result.length);
+                console.log(result);
+                postingDone();
+                return;
             }
+            db.postings.update({"PostingID": posting.PostingID},
+                               posting,
+                               { upsert : true },
+                               function(err) {
+                                   if (isnew) {
+                                       console.log(sprintf("saved new posting pid=%1d [craigslist id=%s]", pid, posting.PostingID));
+                                   } else {
+                                       if (postedDateModified) {
+                                           console.log(sprintf("updated posting pid=%1d [craigslist id=%s] with %s PostedDate",
+                                                               pid, posting.PostingID, postedDateModified));
+                                       } else {
+                                           console.log(sprintf("refreshed posting pid=%1d [craigslist id=%s]", pid, posting.PostingID));
+                                       }
+                                   }
+                                   postingDone();
+                               });
         });
+
     });
-    postingDone();
 }
 
 fs.readFile(load_file, 'utf8', function (err, data) {
@@ -87,7 +131,7 @@ fs.readFile(load_file, 'utf8', function (err, data) {
         console.log('Error: ' + err);
         return;
     }
-    withPidGenerator(function(nextpid) {
-        loadpostings(JSON.parse(data), nextpid);
+    withPidManager(function(pidManager) {
+        loadpostings(JSON.parse(data), pidManager);
     });
 });
