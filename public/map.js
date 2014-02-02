@@ -384,10 +384,10 @@
                 hiddenPostingLayerGroup.clearLayers();
                 _.each(postings, function(posting) {
                     var price = parseInt(posting.Ask,10);
+                    if (price===undefined || isNaN(price)) { price = 0; }
                     var age = (now - parseInt(posting.PostedDate, 10)) / 86400; // age in days; (86400 = 60*60*24 seconds/day)
-                    var checkPrice = (price!==0 && price!==undefined && !isNaN(price));
-                    if (checkPrice && maxPrice !== undefined && price < minPrice) { return; } // posting too expensive
-                    if (checkPrice && maxPrice !== undefined && price > maxPrice) { return; } // posting too cheap
+                    if (maxPrice !== undefined && price < minPrice) { return; } // posting too expensive
+                    if (maxPrice !== undefined && price > maxPrice) { return; } // posting too cheap
                     if (age > maxAge) { return; } // posting too old
                     if (_.contains(posting.Tags, "hidden")) {
                         hiddenPostingLayerGroup.addLayer(posting.marker);
