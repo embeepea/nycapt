@@ -36,22 +36,21 @@ var importDate = Number(((new Date()).getTime()/1000).toFixed(0)); // seconds si
 function withPidManager(callback) {
     var maxPid = 0,
         postingIDByPid = {},
-        pidByPostingID = {};
+        editByPostingID = {};
     db.edits.find(function(err,edits) {
         _.each(edits, function(edit) {
             postingIDByPid[edit.Pid] = edit.PostingID;
-            pidByPostingID[edit.PostingID] = edit.Pid;
+            editByPostingID[edit.PostingID] = edit;
             if (edit.Pid > maxPid) {
                 maxPid = edit.Pid;
             }
         });
         callback({
             'postingIDByPid' : postingIDByPid,
-            'pidByPostingID' : pidByPostingID,
+            'editByPostingID' : editByPostingID,
             'generatePid'    : function(postingID) {
                 ++maxPid;
                 postingIDByPid[maxPid] = postingID;
-                pidByPostingID[postingID] = maxPid;
                 return maxPid;
             }
         });
@@ -76,7 +75,7 @@ function loadpostings(postings, pidManager) {
                 hadEdits = false;
             if (result.length === 1) {
                 // a posting with this ID is already in the database; get its pid
-                pid = pidManager.pidByPostingID[posting.PostingID];
+                pid = pidManager.editByPostingID[posting.PostingID].Pid;
                 // and determine how its PostedDate has changed, if it has
                 if (posting.PostedDate > result[0].PostedDate) {
                     postedDateModified = "newer";
@@ -84,26 +83,26 @@ function loadpostings(postings, pidManager) {
                     postedDateModified = "OLDER [!!??]";
                 }
             } else if (result.length === 0) {
-                // this is a new posting; create a new edit doc for it
+                // this is a new posting; create a new edit doc for it, if we don't already have one
                 isnew = true;
-                db.edits.find({PostingID: posting.PostingID}, function(err,edits) {
-                    // only create an edits doc for this posting if one does not already already exist
-                    if (edits.length <= 0) {
-                        pid = pidManager.generatePid(posting.PostingID);
-                        db.edits.save({
-                            'Pid'        : pid,
-                            'PostingID'  : posting.PostingID,
-                            'ImportDate' : importDate,
-                            'Tags'       : ["new"]
-                        }, function(err,value) {
-                            if (err) {
-                                console.log(sprintf("error saving edits for id=%s", posting.PostingID));
-                            }
-                        });
-                    } else {
-                        hadEdits = true;
-                    }
-                });
+
+                edit = pidManager.editByPostingID[posting.PostingID];
+                if (edit !== undefined) {
+                    hadEdits = true;
+                    pid = edit.Pid;
+                } else {
+                    pid = pidManager.generatePid(posting.PostingID);
+                    db.edits.save({
+                        'Pid'        : pid,
+                        'PostingID'  : posting.PostingID,
+                        'ImportDate' : importDate,
+                        'Tags'       : ["new"]
+                    }, function(err,value) {
+                        if (err) {
+                            console.log(sprintf("error saving edits for id=%s", posting.PostingID));
+                        }
+                    });
+                }
             } else {
                 // print error!
                 console.log('error!');
