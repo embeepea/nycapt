@@ -72,7 +72,8 @@ function loadpostings(postings, pidManager) {
         db.postings.find({"PostingID": posting.PostingID}, function(err, result) {
             var pid,
                 isnew = false,
-                postedDateModified = false;
+                postedDateModified = false,
+                hadEdits = false;
             if (result.length === 1) {
                 // a posting with this ID is already in the database; get its pid
                 pid = pidManager.pidByPostingID[posting.PostingID];
@@ -85,15 +86,22 @@ function loadpostings(postings, pidManager) {
             } else if (result.length === 0) {
                 // this is a new posting; create a new edit doc for it
                 isnew = true;
-                pid = pidManager.generatePid(posting.PostingID);
-                db.edits.save({
-                    'Pid'        : pid,
-                    'PostingID'  : posting.PostingID,
-                    'ImportDate' : importDate,
-                    'Tags'       : ["new"]
-                }, function(err,value) {
-                    if (err) {
-                        console.log(sprintf("error saving edits for id=%s", posting.PostingID));
+                db.edits.find({PostingID: posting.PostingID}, function(err,edits) {
+                    // only create an edits doc for this posting if one does not already already exist
+                    if (edits.length <= 0) {
+                        pid = pidManager.generatePid(posting.PostingID);
+                        db.edits.save({
+                            'Pid'        : pid,
+                            'PostingID'  : posting.PostingID,
+                            'ImportDate' : importDate,
+                            'Tags'       : ["new"]
+                        }, function(err,value) {
+                            if (err) {
+                                console.log(sprintf("error saving edits for id=%s", posting.PostingID));
+                            }
+                        });
+                    } else {
+                        hadEdits = true;
                     }
                 });
             } else {
@@ -109,7 +117,9 @@ function loadpostings(postings, pidManager) {
                                { upsert : true },
                                function(err) {
                                    if (isnew) {
-                                       console.log(sprintf("saved new posting pid=%1d [craigslist id=%s]", pid, posting.PostingID));
+                                       console.log(sprintf("saved new posting pid=%1d [craigslist id=%s]%s",
+                                                           pid, posting.PostingID,
+                                                           hadEdits ? " (re-instating of previous posting)" : ""));
                                    } else {
                                        if (postedDateModified) {
                                            console.log(sprintf("updated posting pid=%1d [craigslist id=%s] with %s PostedDate",

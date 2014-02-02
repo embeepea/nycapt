@@ -1,0 +1,119 @@
+#! /usr/bin/env node
+//-*- mode: js2;-*-
+
+var http = require('follow-redirects').http;
+var databaseUrl = "test";
+var collections = ["postings", "edits"];
+var mongodb = require('mongodb');
+var _ = require('underscore');
+var sprintf = require('sprintf').sprintf;
+var fs = require('fs');
+var db = require("mongojs").connect(databaseUrl, collections);
+
+var region = "brk";
+
+if (process.argv.length > 2) {
+    region = process.argv[2];
+}
+
+if (region != "brk" && region != "mnh" && region != "jsy") {
+    console.log("region must be one of brk, mnh, or jsy");
+    process.exit();
+}
+
+var load_file = region + "-postings.json";
+
+function getHttp(host, path, callback) {
+    var request = http.request({
+        'host': host,
+        'path': path
+    }, function (res) {
+        var data = '';
+        res.on('data', function (chunk) {
+            data += chunk;
+        });
+        res.on('end', function () {
+            callback(data);
+            
+        });
+    });
+    request.on('error', function (e) {
+        console.log(e.message);
+    });
+    request.end();
+}
+
+var nOutstanding = 0;
+
+function incrOutstanding(n) {
+    ++nOutstanding;
+}
+function decrOutstanding(n) {
+    --nOutstanding;
+    if (nOutstanding <= 0) {
+        db.close();
+    }
+}
+
+function deal_with_expired_posting(posting) {
+    incrOutstanding();
+    db.edits.findOne({PostingID: posting.PostingID}, function (err, edit) {
+        if (err) {
+            console.log(err);
+        }
+        if (_.contains(edit.Tags, "favorite")) {
+            // if this is a favorite, add the "expired" tag to it
+            db.edits.findAndModify({
+                query: { "PostingID":posting.PostingID },
+                update: { $set: { Tags : _.union(edit.Tags, "expired") } }
+            }, function() {
+                console.log(sprintf("set favorite posting %s to expired", posting.PostingID));
+                decrOutstanding();
+            });
+        } else {
+            // if it's not a favorite, delete it, but leave its edit doc
+            db.postings.remove({ "PostingID":posting.PostingID }, function() {
+                console.log(sprintf("removed expired posting %s", posting.PostingID));
+                decrOutstanding();
+            });
+        }
+    });
+}
+
+fs.readFile(load_file, 'utf8', function (err, data) {
+    if (err) {
+        console.log('Error: ' + err);
+        return;
+    }
+    var postings_from_file = JSON.parse(data);
+    var is_postingid_in_file = {};
+    _.each(postings_from_file, function(posting) {
+        is_postingid_in_file[posting.PostingID] = true;
+    });
+    db.postings.find(function(err,postings_in_db) {
+        var postings_in_db = _.filter(postings_in_db, function (posting) {
+            return posting.PostingURL.match(new RegExp("^/"+region));
+        });
+        var postings_in_db_not_in_file = _.filter(postings_in_db, function(posting) {
+            return ! is_postingid_in_file[posting.PostingID];
+        });
+        console.log(sprintf("%1d postings in db but not in file:", postings_in_db_not_in_file.length));
+
+        _.each(postings_in_db_not_in_file, function (posting) {
+            incrOutstanding();
+            getHttp('newyork.craigslist.org',
+                    posting.PostingURL,
+                    function (data) {
+                        if (data.match(/this posting has been deleted/i)) {
+                            deal_with_expired_posting(posting);
+                        } else if (data.match(/this posting has expired/i)) {
+                            deal_with_expired_posting(posting);
+                        } else {
+                            // posting is active; take no action
+                        }
+                        decrOutstanding();
+                    });
+        });
+    });
+});
+

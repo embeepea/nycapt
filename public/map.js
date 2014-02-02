@@ -5,7 +5,7 @@
 
     var subway_routes_to_show = ['A', 'C', 'E', 'L', 'N', 'Q', 'G', 'J', '4', '6'];
 
-    var tags = ["new", "hidden", "favorite"];
+    var tags = ["new", "hidden", "favorite", "expired"];
 
     var marker_icon_size = [20, 24];
     var marker_pngs = {
