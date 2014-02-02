@@ -109,7 +109,7 @@
         $.ajax({
             type: 'GET',
             contentType: 'application/json',
-            url: '/nhoods/brooklyn-neighborhoods.json',
+            url: '/nhoods/neighborhoods.json',
             success: function(nhoods) {
                 createNeighborhoodsLayer(nhoods);
             }
