@@ -153,6 +153,6 @@ html, body, #mapcontainer {
 
 .postingpopup .notes textarea {
   width: 300px;
-  height: 180px;
+  height: 150px;
   resize: none;
 }
