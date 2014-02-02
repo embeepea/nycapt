@@ -84,8 +84,28 @@ html, body, #mapcontainer {
 }
 
 
+#search-input-container {
+  position: absolute;
+  bottom: 15px;
+  left: 300px;
+  width: 280px;
+  padding: 5px;
+  background-color: #ffffff;
+  opacity: 0.8;
+}
 
+#search-input-container .label {
+  background-color: #ffffff;
+  color: #000000;
+  font-weight: bold;
+  font-size: 0.9em;
+}
 
+#search-input-container input {
+  height: 20px;
+  width: 200px;
+  border: 2px solid black;
+}
 
 
 

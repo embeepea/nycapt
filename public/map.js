@@ -409,6 +409,44 @@
                 }, 2000);
             };
 
+            var search_timeout;
+            window.do_search = function(event) {
+                // this function gets called on every keystroke in the input area ("oninput" event)
+                if (search_timeout) {
+                    clearTimeout(search_timeout);
+                }
+                search_timeout = setTimeout(function() {
+                    search_go();
+                    search_timeout = undefined;
+                }, 2000);
+            };
+
+            function search_go() {
+                var searchText = $('#search_input').val();
+                var searchInt = parseInt(searchText,10);
+                var posting;
+                if (searchText) {
+                    posting = _.find(postings, function(posting) {
+                        if (posting.PostingID === searchText) { return true; }
+                        if (posting.Pid === searchInt) { return true; }
+                        if (posting.PostingTitle.match(searchText)) { return true; }
+                        if (posting.Notes && posting.Notes.match(searchText)) { return true; }
+                        return false;
+                    });
+                    // only show the found posting if it is currently in one of the posting layer groups (otherwise it must have
+                    // been eliminated by a dynamic search)
+                    if (posting && (hiddenPostingLayerGroup.hasLayer(posting.marker) || postingLayerGroup.hasLayer(posting.marker))) {
+                        // if the posting is hidden, turn on hidden postings, if they're not already on
+                        if (_.contains(posting.Tags, "hidden") && !map.hasLayer(hiddenPostingLayerGroup)) {
+                            hiddenPostingLayerGroup.addTo(map);
+                        }
+                        map.setView(posting.marker.getLatLng(), 14);
+                        posting.marker.openPopup();
+                    }
+                }
+            }
+
+
         }
 
         $.ajax({
