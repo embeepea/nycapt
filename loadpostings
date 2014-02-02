@@ -86,7 +86,7 @@ function loadpostings(postings, pidManager) {
                 // this is a new posting; create a new edit doc for it, if we don't already have one
                 isnew = true;
 
-                edit = pidManager.editByPostingID[posting.PostingID];
+                var edit = pidManager.editByPostingID[posting.PostingID];
                 if (edit !== undefined) {
                     hadEdits = true;
                     pid = edit.Pid;
