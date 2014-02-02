@@ -57,7 +57,7 @@
     </div>
     <div class="content">
       {{#tags}}
-      <div class="checkbox"><input type="checkbox" {{checked}} id="cb_tag_{{postingid}}_{{tag}}" onchange="do_checkbox(event);"> <span class="label">{{tag}}</span></div>
+      <div class="checkbox"><input type="checkbox" {{checked}} id="cb_tag_{{postingid}}_{{tag}}" onchange="do_checkbox(event);"> <label for="cb_tag_{{postingid}}_{{tag}}" class="label">{{tag}}</label></div>
       {{/tags}}
       <p>
       <div class="notes">
