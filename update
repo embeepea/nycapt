@@ -1,0 +1,48 @@
+#! /bin/bash
+
+echo "***"
+echo "***  getpostings brk"
+echo "***"
+./getpostings brk
+
+echo "***"
+echo "***  getpostings mnh"
+echo "***"
+./getpostings mnh
+
+echo "***"
+echo "***  getpostings jsy"
+echo "***"
+./getpostings jsy
+
+
+echo "***"
+echo "***  loadpostings brk"
+echo "***"
+./loadpostings brk
+
+echo "***"
+echo "***  loadpostings mnh"
+echo "***"
+./loadpostings mnh
+
+echo "***"
+echo "***  loadpostings jsy"
+echo "***"
+./loadpostings jsy
+
+
+echo "***"
+echo "***  purge brk"
+echo "***"
+./purge brk
+
+echo "***"
+echo "***  purge mnh"
+echo "***"
+./purge mnh
+
+echo "***"
+echo "***  purge jsy"
+echo "***"
+./purge jsy
