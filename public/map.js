@@ -5,7 +5,7 @@
 
     var subway_routes_to_show = ['A', 'C', 'E', 'L', 'N', 'Q', 'G', 'J', '4', '6'];
 
-    var tags = ["new", "hidden", "favorite", "expired"];
+    var tags = ["new", "hidden", "favorite", "expired", "shared", "contacted"];
 
     var marker_icon_size = [20, 24];
     var marker_pngs = {
@@ -250,6 +250,9 @@
         }
 
         function postingColor(posting) {
+            if (_.contains(posting.Tags, "contacted")) {
+                return "yellow";
+            }
             if (_.contains(posting.Tags, "new")) {
                 return "green";
             }
