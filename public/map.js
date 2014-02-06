@@ -35,6 +35,17 @@
             // options here
         }).setView([40.70, -73.97], 14);
 
+
+
+
+        L.circle([40.720666,-73.99906], 100, {
+                        color : '#000',
+                        weight: 2,
+                        fillColor: '#0ff',
+                        fillOpacity: 0.5
+                    }).bindPopup('<b>Hacker School</b>').addTo(map);
+
+
         map.addControl(new L.Control.Draw({
             draw: {
                 polyline: false,
