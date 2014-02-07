@@ -61,8 +61,8 @@ function deal_with_expired_posting(posting) {
         if (err) {
             console.log(err);
         }
-        if (_.contains(edit.Tags, "favorite")) {
-            // if this is a favorite, add the "expired" tag to it
+        if (_.contains(edit.Tags, "favorite") || _.contains(edit.Tags, "prefav")) {
+            // if this is a favorite, or a prefav, add the "expired" tag to it
             db.edits.findAndModify({
                 query: { "PostingID":posting.PostingID },
                 update: { $set: { Tags : _.union(edit.Tags, "expired") } }
