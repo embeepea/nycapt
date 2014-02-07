@@ -1,8 +1,8 @@
-./makemarker 20 24 "00e03c"
-./makemarker 20 24 "4462c8"
-./makemarker 20 24 "54d6d6"
-./makemarker 20 24 "7d54fb"
-./makemarker 20 24 "e14f9e"
-./makemarker 20 24 "fb6254"
-./makemarker 20 24 "fcf357"
-./makemarker 20 24 "cccccc"
+./makemarker 20 24 "00e03c" 000000 1
+./makemarker 20 24 "4462c8" 000000 1
+./makemarker 20 24 "54d6d6" 000000 1
+./makemarker 20 24 "7d54fb" 000000 1
+./makemarker 20 24 "e14f9e" 000000 1
+./makemarker 20 24 "fb6254" 000000 1
+./makemarker 20 24 "fcf357" 000000 1
+./makemarker 20 24 "cccccc" 000000 1

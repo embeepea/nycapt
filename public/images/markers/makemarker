@@ -9,6 +9,8 @@ var mustache = require('mustache');
 var width = process.argv[2];
 var height = process.argv[3];
 var color = process.argv[4];
+var strokecolor = process.argv[5];
+var strokewidth = process.argv[6];
 
 var svgfile = sprintf("marker-%sx%s-%s.svg", width, height, color);
 var pngfile = sprintf("marker-%sx%s-%s.png", width, height, color);
@@ -17,7 +19,9 @@ fs.readFile('marker.tpl.svg', function(err,contents) {
     var svg = mustache.render(contents.toString(), {
         'width' : width,
         'height' : height,
-        'color' : color
+        'color' : color,
+        'strokecolor' : strokecolor,
+        'strokewidth' : strokewidth
     });
     fs.writeFile(svgfile, svg, function (err) {
         exec("convert -transparent white " + svgfile + " " + pngfile, function() {

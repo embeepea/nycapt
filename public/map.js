@@ -5,7 +5,7 @@
 
     var subway_routes_to_show = ['A', 'C', 'E', 'L', 'N', 'Q', 'G', 'J', '4', '6'];
 
-    var tags = ["new", "hidden", "favorite", "expired", "shared", "contacted"];
+    var tags = ["new", "hidden", "favorite", "expired", "shared", "contacted", "prefav"];
 
     var marker_icon_size = [20, 24];
     var marker_pngs = {
@@ -16,7 +16,9 @@
         'magenta' : "/images/markers/marker-20x24-e14f9e.png",
         'red'     : "/images/markers/marker-20x24-fb6254.png",
         'yellow'  : "/images/markers/marker-20x24-fcf357.png",
-        'gray'    : "/images/markers/marker-20x24-cccccc.png"
+        'gray'    : "/images/markers/marker-20x24-cccccc.png",
+
+        'black'   : "/images/markers/marker-20x24-000000.png"
     };
 
     function is_station_on_shown_subway_route(station) {
@@ -263,6 +265,9 @@
         function postingColor(posting) {
             if (_.contains(posting.Tags, "contacted")) {
                 return "yellow";
+            }
+            if (_.contains(posting.Tags, "prefav")) {
+                return "black";
             }
             if (_.contains(posting.Tags, "new")) {
                 return "green";
