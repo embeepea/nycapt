@@ -9,8 +9,6 @@ var sprintf = require('sprintf').sprintf;
 var fs = require('fs');
 var db = require("mongojs").connect(databaseUrl, collections);
 
-var dumpfile = 'dbdump.json';
-
 db.postings.find(function(err, postings) {
     db.edits.find(function(err, edits) {
         db.filterPolygons.find(function(err, filterPolygons) {

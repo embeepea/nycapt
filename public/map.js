@@ -3,7 +3,8 @@
 /*    var cloudmade_api_key = "a5b0d6c02084a00bd522ad1ee48e37f"; */
     var cloudmade_api_key = "8ee2a50541944fb9bcedded5165f09d9";
 
-    var subway_routes_to_show = ['A', 'C', 'E', 'L', 'N', 'Q', 'G', 'J', '4', '6'];
+//  var subway_routes_to_show = ['A', 'C', 'E', 'L', 'N', 'Q', 'G', 'J', '4', '6'];
+    var subway_routes_to_show = ['Q', 'L', 'J', 'A', 'C', '4'];
 
     var tags = ["new", "hidden", "favorite", "expired", "shared", "contacted", "prefav"];
 
@@ -139,8 +140,8 @@
             var stationCircles = [];
             _.each(stations, function(station) {
                 if (is_station_on_shown_subway_route(station)) {
-                    var stationCircle = L.circle([station.lat,station.lng], 10, {
-                        color : '#f00',
+                    var stationCircle = L.circle([station.lat,station.lng], 30, {
+                        color : '#000',
                         weight: 2,
                         fillColor: '#f03',
                         fillOpacity: 0.5

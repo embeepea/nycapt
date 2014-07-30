@@ -4,9 +4,75 @@
 var databaseUrl = "test";
 var collections = ["filterPolygons", "postings", "edits"];
 var mongodb = require('mongodb');
+var sprintf = require('sprintf');
 var _ = require('underscore');
 var db = require("mongojs").connect(databaseUrl, collections);
 
-db.edits.findOne(function(err,edits) {
-    console.log(edits);
+function isPointInPoly(poly, pt){
+    for(var c = false, i = -1, l = poly.length, j = l - 1; ++i < l; j = i)
+        ((poly[i][0] <= pt[0] && pt[0] < poly[j][0]) || (poly[j][0] <= pt[0] && pt[0] < poly[i][0]))
+        && (pt[1] < (poly[j][1] - poly[i][1]) * (pt[0] - poly[i][0]) / (poly[j][0] - poly[i][0]) + poly[i][1])
+        && (c = !c);
+    return c;
+}
+
+function polygonFilter(polygons) {
+    return function(posting) {
+        var i;
+        for (i=0; i<polygons.length; ++i) {
+            if (isPointInPoly(polygons[i].coords, [posting.Latitude,posting.Longitude])) {
+                return true;
+            }
+        }
+        return false;
+    };
+}
+
+// Call the callback with a single argument which is an object containing a property
+// for each edit in the database; the property name is the PostingID, and the property
+// value is the edit object for that posting.
+function withEditsObj(callback) {
+    db.edits.find(function(err,edits) {
+//console.log('number of edits found is: ' + edits.length);
+        var editsObj = {};
+        _.each(edits, function(edit) {
+            editsObj[edit["PostingID"]] = edit;
+        });
+        callback(editsObj);
+    });
+}
+
+function dopostings(postings) {
+    _.each(postings, function(posting) {
+        if (_.contains(posting.Tags, "hidden")) { return; }
+        var ask = parseInt(posting.Ask,10);
+        if (isNaN(ask)) { ask = 0; }
+        if (ask < 300) { return; }
+        console.log(sprintf("http://newyork.craigslist.org%s", posting.PostingURL));
+    });
+}
+
+db.filterPolygons.find(function(err,filterPolygons) {
+    db.postings.find(function(err,postings) {
+        postings = _.filter(postings, function(posting) {
+            if (parseInt(posting.Ask, 10) >= 2700) { return false; }
+            if (posting.PostingTitle.match(/superbowl/gi)) { return false; }
+            if (posting.PostingTitle.match(/super\s+bowl/gi)) { return false; }
+            return true;
+        });
+        postings = _.filter(postings, polygonFilter(filterPolygons));
+        withEditsObj(function(edits) {
+            _.each(postings, function(posting) {
+                if (edits[posting.PostingID]) {
+                    _.each(edits[posting.PostingID], function(v,k) {
+                        if (k !== "PostingID" && k !== "_id") {
+                            posting[k] = v;
+                        }
+                    });
+                }
+            });
+            dopostings(postings);
+            db.close();
+        });
+    });
 });
