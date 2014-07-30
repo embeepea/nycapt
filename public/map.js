@@ -36,18 +36,19 @@
 
         var map = L.map('map', {
             // options here
-        }).setView([40.70, -73.97], 14);
+        }).setView([40.73, -73.93], 13);
 
 
 
 
+/*
         L.circle([40.720666,-73.99906], 100, {
                         color : '#000',
                         weight: 2,
                         fillColor: '#0ff',
                         fillOpacity: 0.5
                     }).bindPopup('<b>Hacker School</b>').addTo(map);
-
+*/
 
         map.addControl(new L.Control.Draw({
             draw: {
@@ -81,6 +82,7 @@
             layerControl.addOverlay(L.layerGroup(polyLayers).addTo(map), "Filter Polygons");
         }
 
+/*
         $.ajax({
             type: 'POST',
             contentType: 'application/json',
@@ -89,6 +91,7 @@
                 createFilterPolygonsLayer(JSON.parse(filterPolygons));
             }
         });
+*/
 
         function createNeighborhoodsLayer(nhoods) {
             var colors = ["#00e03c","#4462c8","#44c862","#54d6d6","#7d54fb","#fb7d54","#e14f9e","#fb6254","#fcf357","#cccccc"];
@@ -476,6 +479,7 @@
 
         }
 
+/*
         $.ajax({
             type: 'GET',
             contentType: 'application/json',
@@ -484,6 +488,7 @@
                 createPostingsLayers(JSON.parse(postings));
             }
         });
+*/
         
         var messageAreaVisible;
         
