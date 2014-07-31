@@ -49,27 +49,28 @@ function parse(data) {
         var rooms = /Size:\s+[^\|]+\|\s*([\d/\.]+)/.exec($ltable.find('td:nth-child(2)').text().trim())[1];
         var url = $ltable.find('td:nth-child(2) a').attr('href');
 
-
-        incr_noutstanding();
-        geocode(address + ", Brooklyn NY", function(lat,lon) {
-            listings.push({
-                PostingID      : webid,
-                Address        : address,
-                HTML           : $("<div></div>").append($ltable).html(),
-                Latitude       : parseFloat(lat),
-                Longitude      : parseFloat(lon),
-                "Ask"          : rent,
-                "Bedrooms"     : rooms,
-                //"CategoryID": "39", 
-                //"ImageThumb": "http://images.craigslist.org/01414_63IaTOTMW1l_50x50c.jpg", 
-                "PostedDate"   : "1390955817", 
-                "PostingTitle" : address,
-                "PostingURL"   : url
-
+        (function(listing) {
+            incr_noutstanding();
+            geocode(address + ", Brooklyn NY", function(lat,lon) {
+                listing.Latitude  = parseFloat(lat);
+                listing.Longitude = parseFloat(lon);
+                listings.push(listing);
+                decr_noutstanding();
             });
-            decr_noutstanding();
-        });
-
+        }({
+            PostingID      : webid,
+            Address        : address,
+            HTML           : $("<div></div>").append($ltable).html(),
+            "Ask"          : rent,
+            "Bedrooms"     : rooms,
+            //"CategoryID": "39", 
+            //"ImageThumb": "http://images.craigslist.org/01414_63IaTOTMW1l_50x50c.jpg", 
+            "PostedDate"   : "1390955817", 
+            "PostingTitle" : address,
+            "PostingURL"   : url
+        }));
+        
+        
         //break;
     }
     decr_noutstanding();
