@@ -45,13 +45,13 @@ function parse(data) {
 
         var address = $ltable.find('td:nth-child(2) a').text().trim();
         var webid = /Web ID:\s+(\S+)/.exec($ltable.find('td:nth-child(3) p').text().trim())[1];
-        var rent  = /Rent:\s+([^A-Za-z]+)/.exec($ltable.find('td:nth-child(2)').text().trim())[1];
+        var rent  = /Rent:\s+([^A-Za-z\s\|]+)/.exec($ltable.find('td:nth-child(2)').text().trim())[1];
         var rooms = /Size:\s+[^\|]+\|\s*([\d/\.]+)/.exec($ltable.find('td:nth-child(2)').text().trim())[1];
         var url = $ltable.find('td:nth-child(2) a').attr('href');
 
 
         incr_noutstanding();
-        dontgeocode(address + ", Brooklyn NY", function(lat,lon) {
+        geocode(address + ", Brooklyn NY", function(lat,lon) {
             listings.push({
                 PostingID      : webid,
                 Address        : address,
