@@ -61,5 +61,5 @@ function parse(data) {
 }
 
 function generate_output() {
-    console.log(listings);
+    console.log(JSON.stringify(listings));
 }
