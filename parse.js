@@ -25,6 +25,10 @@ function decr_noutstanding() {
     }
 }
 
+function dontgeocode(address, callback) {
+    callback(1.234,5.678);
+}
+
 function parse(data) {
 
     var $body = $(data).find('body');
@@ -41,15 +45,27 @@ function parse(data) {
 
         var address = $ltable.find('td:nth-child(2) a').text().trim();
         var webid = /Web ID:\s+(\S+)/.exec($ltable.find('td:nth-child(3) p').text().trim())[1];
+        var rent  = /Rent:\s+([^A-Za-z]+)/.exec($ltable.find('td:nth-child(2)').text().trim())[1];
+        var rooms = /Size:\s+[^\|]+\|\s*([\d/\.]+)/.exec($ltable.find('td:nth-child(2)').text().trim())[1];
+        var url = $ltable.find('td:nth-child(2) a').attr('href');
+
 
         incr_noutstanding();
-        geocode(address + ", Brooklyn NY", function(lat,lon) {
+        dontgeocode(address + ", Brooklyn NY", function(lat,lon) {
             listings.push({
-                webid   : webid,
-                address : address,
-                html    : $("<div></div>").append($ltable).html(),
-                lat     : parseFloat(lat),
-                lon     : parseFloat(lon)
+                PostingID      : webid,
+                Address        : address,
+                HTML           : $("<div></div>").append($ltable).html(),
+                Latitude       : parseFloat(lat),
+                Longitude      : parseFloat(lon),
+                "Ask"          : rent,
+                "Bedrooms"     : rooms,
+                //"CategoryID": "39", 
+                //"ImageThumb": "http://images.craigslist.org/01414_63IaTOTMW1l_50x50c.jpg", 
+                "PostedDate"   : "1390955817", 
+                "PostingTitle" : address,
+                "PostingURL"   : url
+
             });
             decr_noutstanding();
         });
