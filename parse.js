@@ -14,12 +14,12 @@ var listings = [];
 
 function incr_noutstanding() {
     ++noutstanding;
-    console.log(noutstanding);
+    //console.log(noutstanding);
 }
 
 function decr_noutstanding() {
     --noutstanding;
-    console.log(noutstanding);
+    //console.log(noutstanding);
     if (noutstanding == 0) {
         generate_output();
     }
