@@ -12,6 +12,7 @@
     "mongojs": ">= 0.0.0",
     "mongodb": ">= 0.0.0",
     "jquery": "1.x.x",
+    "jsdom": ">= 0.0.0",
     "q": "~1.0.0",
     "underscore": "~1.5.2",
     "sprintf": "~0.1.3",
