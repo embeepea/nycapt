@@ -2,7 +2,7 @@
 //-*- mode: js2;-*-
 
 var databaseUrl = "test";
-var collections = ["postings", "edits", "filterPolygons"];
+var collections = ["nycapt_postings", "nycapt_edits", "filterPolygons"];
 var mongodb = require('mongodb');
 var _ = require('underscore');
 var sprintf = require('sprintf').sprintf;
@@ -32,11 +32,11 @@ function doQuery(queryFunc, callback) {
 
 countIncr();
 
-doQuery(db.postings.find,
+doQuery(db.nycapt_postings.find,
         function (err, postings) {
             answer.postings = postings;
         });
-doQuery(db.edits.find,
+doQuery(db.nycapt_edits.find,
         function (err, edits) {
             answer.edits = edits;
         });
@@ -47,13 +47,13 @@ doQuery(db.filterPolygons.find,
 
 /*
 countIncr();
-db.postings.find(function(err, postings) {
+db.nycapt_postings.find(function(err, postings) {
     answer.postings = postings;
     countDecr();
 });
 
 countIncr();
-db.edits.find(function(err, edits) {
+db.nycapt_edits.find(function(err, edits) {
     answer.edits = edits;
     countDecr();
 });

@@ -11,8 +11,8 @@ var db = require("mongojs").connect(databaseUrl, collections);
 
 var dumpfile = 'dbdump.json';
 
-db.postings.find(function(err, postings) {
-    db.edits.find(function(err, edits) {
+db.nycapt_postings.find(function(err, postings) {
+    db.nycapt_edits.find(function(err, edits) {
         db.filterPolygons.find(function(err, filterPolygons) {
             fs.writeFile(dumpfile, JSON.stringify({
                 'filterPolygons' : filterPolygons,

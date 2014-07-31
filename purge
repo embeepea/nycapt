@@ -3,7 +3,7 @@
 
 var http = require('follow-redirects').http;
 var databaseUrl = "test";
-var collections = ["postings", "edits"];
+var collections = ["nycapt_postings", "nycapt_edits"];
 var mongodb = require('mongodb');
 var _ = require('underscore');
 var sprintf = require('sprintf').sprintf;
@@ -57,7 +57,7 @@ function decrOutstanding(n) {
 
 function deal_with_expired_posting(posting) {
     incrOutstanding();
-    db.edits.findOne({PostingID: posting.PostingID}, function (err, edit) {
+    db.nycapt_edits.findOne({PostingID: posting.PostingID}, function (err, edit) {
         if (err) {
             console.log(err);
         }
@@ -66,7 +66,7 @@ function deal_with_expired_posting(posting) {
             _.contains(edit.Tags, "contacted")) {
             // if this is a favorite, or a prefav, or contacted, add the "expired" tag to it
             // rather than deleting it
-            db.edits.findAndModify({
+            db.nycapt_edits.findAndModify({
                 query: { "PostingID":posting.PostingID },
                 update: { $set: { Tags : _.union(edit.Tags, "expired") } }
             }, function() {
@@ -75,7 +75,7 @@ function deal_with_expired_posting(posting) {
             });
         } else {
             // if it's not a favorite, delete it, but leave its edit doc
-            db.postings.remove({ "PostingID":posting.PostingID }, function() {
+            db.nycapt_postings.remove({ "PostingID":posting.PostingID }, function() {
                 console.log(sprintf("removed expired posting %s", posting.PostingID));
                 decrOutstanding();
             });
@@ -93,7 +93,7 @@ fs.readFile(load_file, 'utf8', function (err, data) {
     _.each(postings_from_file, function(posting) {
         is_postingid_in_file[posting.PostingID] = true;
     });
-    db.postings.find(function(err,postings_in_db) {
+    db.nycapt_postings.find(function(err,postings_in_db) {
         var postings_in_db = _.filter(postings_in_db, function (posting) {
             return posting.PostingURL.match(new RegExp("^/"+region));
         });

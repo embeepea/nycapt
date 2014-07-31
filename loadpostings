@@ -2,25 +2,14 @@
 //-*- mode: js2;-*-
 
 var databaseUrl = "test";
-var collections = ["postings", "edits"];
+var collections = ["nycapt_postings", "nycapt_edits"];
 var mongodb = require('mongodb');
 var _ = require('underscore');
 var sprintf = require('sprintf').sprintf;
 var fs = require('fs');
 var db = require("mongojs").connect(databaseUrl, collections);
 
-var region = "brk";
-
-if (process.argv.length > 2) {
-    region = process.argv[2];
-}
-
-if (region != "brk" && region != "mnh" && region != "jsy") {
-    console.log("region must be one of brk, mnh, or jsy");
-    process.exit();
-}
-
-var load_file = region + "-postings.json";
+var load_file = "listings.json";
 
 var importDate = Number(((new Date()).getTime()/1000).toFixed(0)); // seconds since the epoch
 
@@ -37,7 +26,7 @@ function withPidManager(callback) {
     var maxPid = 0,
         postingIDByPid = {},
         editByPostingID = {};
-    db.edits.find(function(err,edits) {
+    db.nycapt_edits.find(function(err,edits) {
         _.each(edits, function(edit) {
             postingIDByPid[edit.Pid] = edit.PostingID;
             editByPostingID[edit.PostingID] = edit;
@@ -68,7 +57,7 @@ function loadpostings(postings, pidManager) {
         }
     }
     _.each(postings, function(posting) {
-        db.postings.find({"PostingID": posting.PostingID}, function(err, result) {
+        db.nycapt_postings.find({"PostingID": posting.PostingID}, function(err, result) {
             var pid,
                 isnew = false,
                 postedDateModified = false,
@@ -92,7 +81,14 @@ function loadpostings(postings, pidManager) {
                     pid = edit.Pid;
                 } else {
                     pid = pidManager.generatePid(posting.PostingID);
-                    db.edits.save({
+console.log('saving edit');
+console.log({
+                        'Pid'        : pid,
+                        'PostingID'  : posting.PostingID,
+                        'ImportDate' : importDate,
+                        'Tags'       : ["new"]
+                    });
+                    db.nycapt_edits.save({
                         'Pid'        : pid,
                         'PostingID'  : posting.PostingID,
                         'ImportDate' : importDate,
@@ -111,7 +107,7 @@ function loadpostings(postings, pidManager) {
                 postingDone();
                 return;
             }
-            db.postings.update({"PostingID": posting.PostingID},
+            db.nycapt_postings.update({"PostingID": posting.PostingID},
                                posting,
                                { upsert : true },
                                function(err) {

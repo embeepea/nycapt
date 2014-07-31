@@ -2,15 +2,15 @@
 //-*- mode: js2;-*-
 
 var databaseUrl = "test";
-var collections = ["postings", "edits"];
+var collections = ["nycapt_postings", "nycapt_edits"];
 var mongodb = require('mongodb');
 var _ = require('underscore');
 var sprintf = require('sprintf').sprintf;
 var fs = require('fs');
 var db = require("mongojs").connect(databaseUrl, collections);
 
-db.postings.remove(function() {
-    db.edits.remove(function() {
+db.nycapt_postings.remove(function() {
+    db.nycapt_edits.remove(function() {
         db.close();
     });
 });

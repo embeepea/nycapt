@@ -2,7 +2,7 @@
 //-*- mode: js2;-*-
 
 var databaseUrl = "test";
-var collections = ["postings", "edits", "filterPolygons"];
+var collections = ["nycapt_postings", "nycapt_edits", "filterPolygons"];
 var mongodb = require('mongodb');
 var _ = require('underscore');
 var sprintf = require('sprintf').sprintf;
@@ -21,8 +21,8 @@ function incrOps() {
 function decrOps() {
     --nOps;
     if (nOps <= 0) {
-        db.postings.find(function(err, postings) {
-            db.edits.find(function(err, edits) {
+        db.nycapt_postings.find(function(err, postings) {
+            db.nycapt_edits.find(function(err, edits) {
                 db.filterPolygons.find(function(err, filterPolygons) {
                     console.log('loaded:');
                     console.log(sprintf('    %1d filterPolygons', filterPolygons.length));
@@ -50,19 +50,19 @@ fs.readFile(dumpfile, function(err,contents) {
     });
 
     incrOps();
-    db.postings.remove(function() { // delete the postings
+    db.nycapt_postings.remove(function() { // delete the postings
         _.each(dumpobj.postings, function (posting) { // load each posting
             incrOps();
-            db.postings.save(posting, decrOps);
+            db.nycapt_postings.save(posting, decrOps);
         });
         decrOps();
     });
 
     incrOps();
-    db.edits.remove(function() { // delete the edits
+    db.nycapt_edits.remove(function() { // delete the edits
         _.each(dumpobj.edits, function (edit) { // load each edit
             incrOps();
-            db.edits.save(edit, decrOps);
+            db.nycapt_edits.save(edit, decrOps);
         });
         decrOps();
     });

@@ -1,7 +1,7 @@
 var port_number = 3000;
 
 var databaseUrl = "test";
-var collections = ["filterPolygons", "postings", "edits"];
+var collections = ["filterPolygons", "nycapt_postings", "nycapt_edits"];
 var mongodb = require('mongodb');
 var sprintf = require('sprintf');
 var _ = require('underscore');
@@ -85,7 +85,7 @@ app.post('/filterPolygons', function(req, res) {
 // for each edit in the database; the property name is the PostingID, and the property
 // value is the edit object for that posting.
 function withEditsObj(callback) {
-    db.edits.find(function(err,edits) {
+    db.nycapt_edits.find(function(err,edits) {
 //console.log('number of edits found is: ' + edits.length);
         var editsObj = {};
         _.each(edits, function(edit) {
@@ -97,7 +97,7 @@ function withEditsObj(callback) {
 
 app.get('/postings', function(req, res) {
     db.filterPolygons.find(function(err,filterPolygons) {
-        db.postings.find(function(err,postings) {
+        db.nycapt_postings.find(function(err,postings) {
             postings = _.filter(postings, function(posting) {
                 if (parseInt(posting.Ask, 10) >= 2700) { return false; }
                 if (posting.PostingTitle.match(/superbowl/gi)) { return false; }
@@ -124,7 +124,7 @@ app.get('/postings', function(req, res) {
 app.post('/settags', function(req, res) {
     var PostingID = req.body.PostingID;
     var tags = req.body.tags;
-    db.edits.findAndModify({
+    db.nycapt_edits.findAndModify({
         query: { "PostingID":PostingID },
         update: { $set: { Tags : tags } }
     }, function() {
@@ -135,7 +135,7 @@ app.post('/settags', function(req, res) {
 app.post('/postnotes', function(req, res) {
     var PostingID = req.body.PostingID;
     var notes = req.body.notes;
-    db.edits.findAndModify({
+    db.nycapt_edits.findAndModify({
         query: { "PostingID":PostingID },
         update: { $set: { Notes : notes } }
     }, function() {

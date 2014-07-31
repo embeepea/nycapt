@@ -479,7 +479,7 @@
 
         }
 
-/*
+
         $.ajax({
             type: 'GET',
             contentType: 'application/json',
@@ -488,7 +488,7 @@
                 createPostingsLayers(JSON.parse(postings));
             }
         });
-*/
+
         
         var messageAreaVisible;
         

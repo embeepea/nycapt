@@ -2,7 +2,7 @@
 //-*- mode: js2;-*-
 
 var databaseUrl = "test";
-var collections = ["filterPolygons", "postings", "edits"];
+var collections = ["filterPolygons", "nycapt_postings", "nycapt_edits"];
 var mongodb = require('mongodb');
 var sprintf = require('sprintf');
 var _ = require('underscore');
@@ -32,7 +32,7 @@ function polygonFilter(polygons) {
 // for each edit in the database; the property name is the PostingID, and the property
 // value is the edit object for that posting.
 function withEditsObj(callback) {
-    db.edits.find(function(err,edits) {
+    db.nycapt_edits.find(function(err,edits) {
 //console.log('number of edits found is: ' + edits.length);
         var editsObj = {};
         _.each(edits, function(edit) {
@@ -53,7 +53,7 @@ function dopostings(postings) {
 }
 
 db.filterPolygons.find(function(err,filterPolygons) {
-    db.postings.find(function(err,postings) {
+    db.nycapt_postings.find(function(err,postings) {
         postings = _.filter(postings, function(posting) {
             if (parseInt(posting.Ask, 10) >= 2700) { return false; }
             if (posting.PostingTitle.match(/superbowl/gi)) { return false; }
