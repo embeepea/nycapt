@@ -461,13 +461,20 @@
                 var searchInt = parseInt(searchText,10);
                 var posting;
                 if (searchText) {
+                    // search all postings for exact match of pid or postingid first
                     posting = _.find(postings, function(posting) {
                         if (posting.PostingID === searchText) { return true; }
-                        if (posting.Pid === searchInt) { return true; }
-                        if (posting.PostingTitle.match(searchText)) { return true; }
-                        if (posting.Notes && posting.Notes.match(searchText)) { return true; }
+                        if (posting.Pid == searchText) { return true; }
                         return false;
                     });
+                    // then look for match against title / notes
+                    if (posting === undefined) {
+                        posting = _.find(postings, function(posting) {
+                            if (posting.PostingTitle.match(searchText)) { return true; }
+                            if (posting.Notes && posting.Notes.match(searchText)) { return true; }
+                            return false;
+                        });
+                    }
                     // only show the found posting if it is currently in one of the posting layer groups (otherwise it must have
                     // been eliminated by a dynamic search)
                     if (posting && (hiddenPostingLayerGroup.hasLayer(posting.marker) || postingLayerGroup.hasLayer(posting.marker))) {
