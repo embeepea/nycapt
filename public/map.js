@@ -142,6 +142,69 @@
             }
         });
 
+
+        function createHEZLayer(nyhez) {
+            var colors = ["#df7f5e", "#e69e5e", "#ece366", "#c1d267", "#9ac777", "#52a897"];
+            //            zone 1     zone 2     zone 3     zone 4     zone 5     zone 6
+
+            var color_i = 0;
+
+            function featureToColor(feature) {
+                if (feature.properties.Zone == "1") { return colors[0]; }
+                if (feature.properties.Zone == "2") { return colors[1]; }
+                if (feature.properties.Zone == "3") { return colors[2]; }
+                if (feature.properties.Zone == "4") { return colors[3]; }
+                if (feature.properties.Zone == "5") { return colors[4]; }
+                if (feature.properties.Zone == "6") { return colors[5]; }
+                return undefined;
+            }
+
+
+            function switchCoords(list) {
+                if (list.length == 0) { return list; }
+                if (typeof(list[0]) === "number") { return [ list[1], list[0] ]; }
+                return _.map(list, switchCoords);
+            }
+
+
+            var nyhezLayers = [];
+
+
+            _.each(nyhez.features, function(feature) {
+                var gon;
+                var color = featureToColor(feature);
+                if (color) {
+                    if (feature.geometry.type === "Polygon") {
+                        nyhezLayers.push(gon = L.polygon(switchCoords(feature.geometry.coordinates), {
+                            "fillColor" : color,
+                            "fillOpacity" : 0.8,
+                            "color" : "#000000",
+                            "weight" : 1
+                        }).bindLabel("HEZ Zone " + feature.properties.Zone));
+                    } else if (feature.geometry.type === "MultiPolygon") {
+                        nyhezLayers.push(gon = L.multiPolygon(switchCoords(feature.geometry.coordinates),{
+                            "fillColor" : color,
+                            "fillOpacity" : 0.8,
+                            "color" : "#000000",
+                            "weight" : 1
+                        }).bindLabel("HEZ Zone " + feature.properties.Zone));
+                    }
+                }
+
+            });
+
+            layerControl.addOverlay(L.layerGroup(nyhezLayers), "Hurricane Zones");
+        }
+
+        $.ajax({
+            type: 'GET',
+            contentType: 'application/json',
+            url: '/nyhez/nyhez.json',
+            success: function(nyhez) {
+                createHEZLayer(nyhez);
+            }
+        });
+
         function createStationsLayer(stations) {
             var stationCircles = [];
             _.each(stations, function(station) {
