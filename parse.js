@@ -5,6 +5,8 @@ var $ = require('jquery')(jsdom.jsdom().createWindow());
 var fs = require('fs');
 var geocode = require('./geocode.js').geocode;
 
+var listing_source = "Shaw";
+
 fs.readFile("ShawBKListings1/listings.html", { encoding: 'utf8' }, function(err, data) {
     parse(data);
 });
@@ -46,6 +48,7 @@ function parse(data) {
         var address = $ltable.find('td:nth-child(2) a').text().trim();
         var webid = /Web ID:\s+(\S+)/.exec($ltable.find('td:nth-child(3) p').text().trim())[1];
         var rent  = /Rent:\s+([^A-Za-z\s\|]+)/.exec($ltable.find('td:nth-child(2)').text().trim())[1];
+        rent = rent.replace(/[\$,]+/g, '');
         var rooms = /Size:\s+[^\|]+\|\s*([\d/\.]+)/.exec($ltable.find('td:nth-child(2)').text().trim())[1];
         var url = $ltable.find('td:nth-child(2) a').attr('href');
 
@@ -59,6 +62,7 @@ function parse(data) {
             });
         }({
             PostingID      : webid,
+            Source         : listing_source,
             Address        : address,
             HTML           : $("<div></div>").append($ltable).html(),
             "Ask"          : rent,
