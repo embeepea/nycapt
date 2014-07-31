@@ -125,11 +125,11 @@ html, body, #mapcontainer {
   font-width: bold;
 }
 .item-entry .item-title input {
-  width: 300px;
+  width: 700px;
 }
 
 .item-entry textarea {
-  width: 300px;
+  width: 700px;
   height: 500px;
 }
 
@@ -140,7 +140,7 @@ html, body, #mapcontainer {
 }
 
 .postingpopup {
-    width: 300px;
+    width: 650px;
     height: 480px;
 }
 
@@ -168,6 +168,10 @@ html, body, #mapcontainer {
     position: relative;
 }
 
+.postingpopup .content div.checkbox {
+    display: inline;
+}
+
 .postingpopup .label {
   color: #000;
   background-color: #fff;
@@ -175,7 +179,15 @@ html, body, #mapcontainer {
 }
 
 .postingpopup .notes textarea {
-  width: 300px;
+  width: 650px;
   height: 150px;
   resize: none;
+}
+
+.leaflet-popup {
+  width: 700px;
+}
+
+div.postingpopup div.content input[type="checkbox"] {
+  float: none;
 }

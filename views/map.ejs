@@ -49,18 +49,20 @@
         <tr>
           <td class="left" align="left">
             <div class="title">{{{postingtitle}}}</div>
-            <div class="posteddate">{{{posteddate}}}</div>
-            <div class="url"><a target="_blank" href="{{{postingurl}}}">open web page</a></div>
+            <!-- <div class="posteddate">{{{posteddate}}}</div> -->
+            <div class="posteddate">Source: {{{source}}}</div>
+            <!-- <div class="url"><a target="_blank" href="{{{postingurl}}}">open web page</a></div> -->
           </td>
           <td class="right" align="right">
             <div class="pid">pid: {{{pid}}}</div>
             <div class="imagethumb">{{{imagethumb}}}</div>
-            <div class="ask">${{{ask}}}</div>
-            <div class="bedrooms">{{{bedrooms}}} BR</div>
+            <div class="rent">${{{ask}}}</div>
+            <div class="bedrooms">{{{bedrooms}}}</div>
           </td>
         </tr>
       </table>
     </div>
+    <div class="listinghtml">{{{listinghtml}}}</div>
     <div class="content">
       {{#tags}}
       <div class="checkbox"><input type="checkbox" {{checked}} id="cb_tag_{{postingid}}_{{tag}}" onchange="do_checkbox(event);"> <label for="cb_tag_{{postingid}}_{{tag}}" class="label">{{tag}}</label></div>

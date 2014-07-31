@@ -96,15 +96,13 @@ function withEditsObj(callback) {
 }
 
 app.get('/postings', function(req, res) {
-    db.filterPolygons.find(function(err,filterPolygons) {
         db.nycapt_postings.find(function(err,postings) {
             postings = _.filter(postings, function(posting) {
-                if (parseInt(posting.Ask, 10) >= 2700) { return false; }
-                if (posting.PostingTitle.match(/superbowl/gi)) { return false; }
-                if (posting.PostingTitle.match(/super\s+bowl/gi)) { return false; }
+                //if (parseInt(posting.Ask, 10) >= 2700) { return false; }
+                //if (posting.PostingTitle.match(/superbowl/gi)) { return false; }
+                //if (posting.PostingTitle.match(/super\s+bowl/gi)) { return false; }
                 return true;
             });
-            postings = _.filter(postings, polygonFilter(filterPolygons));
             withEditsObj(function(edits) {
                 _.each(postings, function(posting) {
                     if (edits[posting.PostingID]) {
@@ -118,7 +116,6 @@ app.get('/postings', function(req, res) {
                 res.send(JSON.stringify(postings));
             });
         });
-    });
 });
 
 app.post('/settags', function(req, res) {

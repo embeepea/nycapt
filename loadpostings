@@ -81,13 +81,6 @@ function loadpostings(postings, pidManager) {
                     pid = edit.Pid;
                 } else {
                     pid = pidManager.generatePid(posting.PostingID);
-console.log('saving edit');
-console.log({
-                        'Pid'        : pid,
-                        'PostingID'  : posting.PostingID,
-                        'ImportDate' : importDate,
-                        'Tags'       : ["new"]
-                    });
                     db.nycapt_edits.save({
                         'Pid'        : pid,
                         'PostingID'  : posting.PostingID,
@@ -96,6 +89,7 @@ console.log({
                     }, function(err,value) {
                         if (err) {
                             console.log(sprintf("error saving edits for id=%s", posting.PostingID));
+                            console.log(err);
                         }
                     });
                 }

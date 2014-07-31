@@ -23,6 +23,8 @@
     };
 
     function is_station_on_shown_subway_route(station) {
+        return true;
+        /*
         var i;
         for (i=0; i<subway_routes_to_show.length; ++i) {
             if (_.contains(station.rts, subway_routes_to_show[i])) {
@@ -30,6 +32,7 @@
             }
         }
         return false;
+        */
     }
     
     $(document).ready(function() {
@@ -304,7 +307,9 @@
                 "pid"       : posting.Pid,
                 "postingid" : posting.PostingID,
                 "lat"       : posting.Latitude,
-                "lng"       : posting.Longitude
+                "lng"       : posting.Longitude,
+                "listinghtml" : posting.HTML,
+                "source"      : posting.Source
             });
         }
     
