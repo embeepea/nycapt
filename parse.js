@@ -7,7 +7,7 @@ var geocode = require('./geocode.js').geocode;
 
 var listing_source = "Shaw";
 
-fs.readFile("ShawBKListings1/listings.html", { encoding: 'utf8' }, function(err, data) {
+fs.readFile("ShawMHListings2/listings2.html", { encoding: 'utf8' }, function(err, data) {
     parse(data);
 });
 
@@ -54,7 +54,7 @@ function parse(data) {
 
         (function(listing) {
             incr_noutstanding();
-            geocode(address + ", Brooklyn NY", function(lat,lon) {
+            dontgeocode(address + ", Brooklyn NY", function(lat,lon) {
                 listing.Latitude  = parseFloat(lat);
                 listing.Longitude = parseFloat(lon);
                 listings.push(listing);
