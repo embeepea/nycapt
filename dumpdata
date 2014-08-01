@@ -2,7 +2,7 @@
 //-*- mode: js2;-*-
 
 var databaseUrl = "test";
-var collections = ["postings", "edits", "filterPolygons"];
+var collections = ["nycapt_postings", "nycapt_edits"];
 var mongodb = require('mongodb');
 var _ = require('underscore');
 var sprintf = require('sprintf').sprintf;
@@ -13,15 +13,12 @@ var dumpfile = 'dbdump.json';
 
 db.nycapt_postings.find(function(err, postings) {
     db.nycapt_edits.find(function(err, edits) {
-        db.filterPolygons.find(function(err, filterPolygons) {
-            fs.writeFile(dumpfile, JSON.stringify({
-                'filterPolygons' : filterPolygons,
-                'postings' : postings,
-                'edits' : edits
-            }), function() {
-                console.log('wrote ' + dumpfile);
-                db.close();
-            });
+        fs.writeFile(dumpfile, JSON.stringify({
+            'nycapt_postings' : postings,
+            'nycapt_edits' : edits
+        }), function() {
+            console.log('wrote ' + dumpfile);
+            db.close();
         });
     });
 });
