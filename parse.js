@@ -54,7 +54,7 @@ function parse(data) {
 
         (function(listing) {
             incr_noutstanding();
-            dontgeocode(address + ", Brooklyn NY", function(lat,lon) {
+            geocode(address + ", Brooklyn NY", function(lat,lon) {
                 listing.Latitude  = parseFloat(lat);
                 listing.Longitude = parseFloat(lon);
                 listings.push(listing);
