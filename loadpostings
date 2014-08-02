@@ -9,7 +9,7 @@ var sprintf = require('sprintf').sprintf;
 var fs = require('fs');
 var db = require("mongojs").connect(databaseUrl, collections);
 
-var load_file = "listings2.json";
+var load_file = "nan1.json";
 
 var importDate = Number(((new Date()).getTime()/1000).toFixed(0)); // seconds since the epoch
 
