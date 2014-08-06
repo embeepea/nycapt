@@ -1,0 +1,1361 @@
+FAVORITES
+        {
+#42
+125 N. 10th St.
+$4500
+expensive
+            "ImportDate": 1406822445, 
+            "Notes": "expensive", 
+            "Pid": 42, 
+            "PostingID": "1324244", 
+            "Tags": [
+                "favorite", 
+                "prefav"
+            ], 
+            "_id": "53da682c9ae7db1c0d09e163",
+        {
+            "Address": "125 N. 10th St.", 
+            "Ask": "4500", 
+            "Bedrooms": "5/2/2", 
+            "Latitude": 40.720101999999997, 
+            "Longitude": -73.956785999999994, 
+            "PostedDate": "1390955817", 
+            "PostingID": "1324244", 
+            "PostingTitle": "125 N. 10th St.", 
+            "Source": "Shaw", 
+            "_id": "53da682c7ffce9eba9e36795"
+        }
+        }, 
+        {
+#37
+111 Lawrence St.
+$4055
+no photos
+            "ImportDate": 1406822445, 
+            "Notes": "no photos", 
+            "Pid": 37, 
+            "PostingID": "1304768", 
+            "Tags": [
+                "favorite"
+            ], 
+            "_id": "53da682c9ae7db1c0d09e15e",
+        {
+            "Address": "111 Lawrence St.", 
+            "Ask": "4055", 
+            "Bedrooms": "4/2/2", 
+            "Latitude": 40.692734000000002, 
+            "Longitude": -73.986024999999998, 
+            "PostedDate": "1390955817", 
+            "PostingID": "1304768", 
+            "PostingTitle": "111 Lawrence St.", 
+            "Source": "Shaw", 
+            "_id": "53da682c7ffce9eba9e36790"
+        }
+        }, 
+        {
+#6
+65 Washington St.
+$4200
+            "ImportDate": 1406822445, 
+            "Pid": 6, 
+            "PostingID": "589633", 
+            "Tags": [
+                "favorite"
+            ], 
+            "_id": "53da682c9ae7db1c0d09e13f",
+        {
+            "Address": "65 Washington St.", 
+            "Ask": "4200", 
+            "Bedrooms": "5/2/2", 
+            "Latitude": 40.702340999999997, 
+            "Longitude": -73.989470999999995, 
+            "PostedDate": "1390955817", 
+            "PostingID": "589633", 
+            "PostingTitle": "65 Washington St.", 
+            "Source": "Shaw", 
+            "_id": "53da682c7ffce9eba9e36779"
+        }
+        }, 
+        {
+            "ImportDate": 1406822445, 
+            "Pid": 36, 
+            "PostingID": "1227169", 
+            "Tags": [
+                "favorite"
+            ], 
+            "_id": "53da682c9ae7db1c0d09e15d",
+        {
+            "Address": "343 4th Ave", 
+            "Ask": "3900", 
+            "Bedrooms": "4/2/2", 
+            "Latitude": 40.672666999999997, 
+            "Longitude": -73.986333999999999, 
+            "PostedDate": "1390955817", 
+            "PostingID": "1227169", 
+            "PostingTitle": "343 4th Ave", 
+            "Source": "Shaw", 
+            "_id": "53da682c7ffce9eba9e3678f"
+        }
+        }, 
+        {
+            "ImportDate": 1406822445, 
+            "Pid": 23, 
+            "PostingID": "1338266", 
+            "Tags": [
+                "favorite"
+            ], 
+            "_id": "53da682c9ae7db1c0d09e150",
+        {
+            "Address": "15 Roebling St.", 
+            "Ask": "3795", 
+            "Bedrooms": "4/2/2", 
+            "Latitude": 40.717975000000003, 
+            "Longitude": -73.953137999999996, 
+            "PostedDate": "1390955817", 
+            "PostingID": "1338266", 
+            "PostingTitle": "15 Roebling St.", 
+            "Source": "Shaw", 
+            "_id": "53da682c7ffce9eba9e36782"
+        }
+        }, 
+        {
+            "ImportDate": 1406822445, 
+            "Notes": "expensive", 
+            "Pid": 54, 
+expensive
+            "PostingID": "1334822", 
+            "Tags": [
+                "favorite", 
+                "prefav"
+            ], 
+            "_id": "53da682c9ae7db1c0d09e16f",
+        {
+            "Address": "170 N. 11th St.", 
+            "Ask": "4500", 
+            "Bedrooms": "4/2/2", 
+            "Latitude": 40.719617, 
+            "Longitude": -73.954991000000007, 
+            "PostedDate": "1390955817", 
+            "PostingID": "1334822", 
+            "PostingTitle": "170 N. 11th St.", 
+            "Source": "Shaw", 
+            "_id": "53da682c7ffce9eba9e367a1"
+        }
+        }, 
+        {
+#2
+154 Skillman Ave
+$3795
+            "ImportDate": 1406822445, 
+            "Pid": 2, 
+            "PostingID": "1060004", 
+            "Tags": [
+                "favorite"
+            ], 
+            "_id": "53da682c9ae7db1c0d09e13b",
+        {
+            "Address": "154 Skillman Ave", 
+            "Ask": "3795", 
+            "Bedrooms": "4/2/2", 
+            "Latitude": 40.71566, 
+            "Longitude": -73.945026999999996, 
+            "PostedDate": "1390955817", 
+            "PostingID": "1060004", 
+            "PostingTitle": "154 Skillman Ave", 
+            "Source": "Shaw", 
+            "_id": "53da682c7ffce9eba9e36772"
+        }
+        }, 
+        {
+            "ImportDate": 1406822445, 
+            "Pid": 45, 
+            "PostingID": "1335710", 
+            "Tags": [
+                "favorite"
+            ], 
+            "_id": "53da682c9ae7db1c0d09e166",
+        {
+            "Address": "180 Nassau St.", 
+            "Ask": "3695", 
+            "Bedrooms": "5/2/2", 
+            "Latitude": 40.698193000000003, 
+            "Longitude": -73.984207999999995, 
+            "PostedDate": "1390955817", 
+            "PostingID": "1335710", 
+            "PostingTitle": "180 Nassau St.", 
+            "Source": "Shaw", 
+            "_id": "53da682c7ffce9eba9e36798"
+        }
+        }, 
+        {
+            "ImportDate": 1406822445, 
+            "Pid": 11, 
+            "PostingID": "1319932", 
+            "Tags": [
+                "favorite"
+            ], 
+            "_id": "53da682c9ae7db1c0d09e144",
+        {
+            "Address": "257 Gold St.", 
+            "Ask": "3495", 
+            "Bedrooms": "4/2/2", 
+            "Latitude": 40.696843999999999, 
+            "Longitude": -73.982930999999994, 
+            "PostedDate": "1390955817", 
+            "PostingID": "1319932", 
+            "PostingTitle": "257 Gold St.", 
+            "Source": "Shaw", 
+            "_id": "53da682c7ffce9eba9e3677a"
+        }
+        }, 
+        {
+            "ImportDate": 1406822445, 
+            "Notes": "balcony", 
+            "Pid": 34, 
+balcony
+            "PostingID": "1335715", 
+            "Tags": [
+                "favorite"
+            ], 
+            "_id": "53da682c9ae7db1c0d09e15b",
+        {
+            "Address": "180 Nassau St.", 
+            "Ask": "3795", 
+            "Bedrooms": "5/2/2", 
+            "Latitude": 40.698193000000003, 
+            "Longitude": -73.984207999999995, 
+            "PostedDate": "1390955817", 
+            "PostingID": "1335715", 
+            "PostingTitle": "180 Nassau St.", 
+            "Source": "Shaw", 
+            "_id": "53da682c7ffce9eba9e3678d"
+        }
+        }, 
+        {
+#47
+257 Gold St.
+$3950
+no photos
+            "ImportDate": 1406822445, 
+            "Notes": "no photos", 
+            "Pid": 47, 
+            "PostingID": "1150335", 
+            "Tags": [
+                "favorite", 
+                "prefav"
+            ], 
+            "_id": "53da682c9ae7db1c0d09e168",
+        {
+            "Address": "257 Gold St.", 
+            "Ask": "3950", 
+            "Bedrooms": "4/2/2", 
+            "Latitude": 40.696843999999999, 
+            "Longitude": -73.982930999999994, 
+            "PostedDate": "1390955817", 
+            "PostingID": "1150335", 
+            "PostingTitle": "257 Gold St.", 
+            "Source": "Shaw", 
+            "_id": "53da682c7ffce9eba9e3679a"
+        }
+        }, 
+        {
+#15
+150 Myrtle Ave
+$4100
+a little cheaper than other apartment
+            "ImportDate": 1406822445, 
+            "Notes": "a little cheaper than other apartment", 
+            "Pid": 15, 
+            "PostingID": "964521", 
+            "Tags": [
+                "favorite"
+            ], 
+            "_id": "53da682c9ae7db1c0d09e148",
+        {
+            "Address": "150 Myrtle Ave", 
+            "Ask": "4100", 
+            "Bedrooms": "4/2/2", 
+            "Latitude": 40.693286000000001, 
+            "Longitude": -73.982712000000006, 
+            "PostedDate": "1390955817", 
+            "PostingID": "964521", 
+            "PostingTitle": "150 Myrtle Ave", 
+            "Source": "Shaw", 
+            "_id": "53da682c7ffce9eba9e36777"
+        }
+        }, 
+        {
+#22
+218 Myrtle Ave
+$3100
+            "ImportDate": 1406822445, 
+            "Pid": 22, 
+            "PostingID": "1336649", 
+            "Tags": [
+                "favorite"
+            ], 
+            "_id": "53da682c9ae7db1c0d09e14f",
+        {
+            "Address": "218 Myrtle Ave", 
+            "Ask": "3100", 
+            "Bedrooms": "4/2/2", 
+            "Latitude": 40.693370999999999, 
+            "Longitude": -73.979709999999997, 
+            "PostedDate": "1390955817", 
+            "PostingID": "1336649", 
+            "PostingTitle": "218 Myrtle Ave", 
+            "Source": "Shaw", 
+            "_id": "53da682c7ffce9eba9e36781"
+        }
+        }, 
+        {
+            "ImportDate": 1406822445, 
+            "Notes": "no photos", 
+            "Pid": 16, 
+no photos
+            "PostingID": "1197388", 
+            "Tags": [
+                "favorite"
+            ], 
+            "_id": "53da682c9ae7db1c0d09e149",
+        {
+            "Address": "111 Lawrence St.", 
+            "Ask": "4130", 
+            "Bedrooms": "4/2/2", 
+            "Latitude": 40.692734000000002, 
+            "Longitude": -73.986024999999998, 
+            "PostedDate": "1390955817", 
+            "PostingID": "1197388", 
+            "PostingTitle": "111 Lawrence St.", 
+            "Source": "Shaw", 
+            "_id": "53da682c7ffce9eba9e3677b"
+        }
+        }, 
+        {
+#61
+159 W.  53rd St.
+$4300
+great location; large bedrooms; close to central park\nmbp: I like this too, great location, seems almost too good to be true.  Definitely worth checking out.\n
+            "ImportDate": 1406922401, 
+            "Notes": "great location; large bedrooms; close to central park\nmbp: I like this too, great location, seems almost too good to be true.  Definitely worth checking out.\n", 
+            "Pid": 61, 
+            "PostingID": "522691", 
+            "Tags": [
+                "favorite"
+            ], 
+            "_id": "53dbeea1a512d40116a84f89",
+        {
+            "Address": "159 W.  53rd St.", 
+            "Ask": "4300", 
+            "Bedrooms": "4/2/1.5", 
+            "Latitude": 40.763154999999998, 
+            "Longitude": -73.981030000000004, 
+            "PostedDate": "1390955817", 
+            "PostingID": "522691", 
+            "PostingTitle": "159 W.  53rd St.", 
+            "Source": "Shaw", 
+            "_id": "53dbeea17ffce9eba9e367c2"
+        }
+        }, 
+        {
+#3
+186 Grand St.
+$3850
+mbp: \"status: application\" - I wonder if that means that someone has applied for it already?
+            "ImportDate": 1406822445, 
+            "Notes": "mbp: \"status: application\" - I wonder if that means that someone has applied for it already?", 
+            "Pid": 3, 
+            "PostingID": "1329460", 
+            "Tags": [
+                "favorite"
+            ], 
+            "_id": "53da682c9ae7db1c0d09e13c",
+        {
+            "Address": "186 Grand St.", 
+            "Ask": "3850", 
+            "Bedrooms": "4/2/2", 
+            "Latitude": 40.714095999999998, 
+            "Longitude": -73.960963000000007, 
+            "PostedDate": "1390955817", 
+            "PostingID": "1329460", 
+            "PostingTitle": "186 Grand St.", 
+            "Source": "Shaw", 
+            "_id": "53da682c7ffce9eba9e3676c"
+        }
+        }, 
+        {
+#32
+63 Skillman Ave
+$4500
+expensive but superfly and has upstairs cat-free sleeping loft\nmbp: agree it's expensive, but way cool and real close to subway
+            "ImportDate": 1406822445, 
+            "Notes": "expensive but superfly and has upstairs cat-free sleeping loft\nmbp: agree it's expensive, but way cool and real close to subway", 
+            "Pid": 32, 
+            "PostingID": "1336848", 
+            "Tags": [
+                "favorite"
+            ], 
+            "_id": "53da682c9ae7db1c0d09e159",
+        {
+            "Address": "63 Skillman Ave", 
+            "Ask": "4500", 
+            "Bedrooms": "5/2/2", 
+            "Latitude": 40.715722999999997, 
+            "Longitude": -73.949118999999996, 
+            "PostedDate": "1390955817", 
+            "PostingID": "1336848", 
+            "PostingTitle": "63 Skillman Ave", 
+            "Source": "Shaw", 
+            "_id": "53da682c7ffce9eba9e3678b"
+        }
+        }, 
+        {
+#46
+556 State St.
+$3800
+great balcony!! super close to subway
+            "ImportDate": 1406822445, 
+            "Notes": "great balcony!! super close to subway", 
+            "Pid": 46, 
+            "PostingID": "1333643", 
+            "Tags": [
+                "favorite"
+            ], 
+            "_id": "53da682c9ae7db1c0d09e167",
+        {
+            "Address": "556 State St.", 
+            "Ask": "3800", 
+            "Bedrooms": "4/2/2", 
+            "Latitude": 40.685257999999997, 
+            "Longitude": -73.978864999999999, 
+            "PostedDate": "1390955817", 
+            "PostingID": "1333643", 
+            "PostingTitle": "556 State St.", 
+            "Source": "Shaw", 
+            "_id": "53da682c7ffce9eba9e36799"
+        }
+        }, 
+        {
+#33
+556 State St.
+$3650
+mbp: possibly too close to busy / noisy Flatbush Ave, but nice apt, and darn close to subway
+            "ImportDate": 1406822445, 
+            "Notes": "mbp: possibly too close to busy / noisy Flatbush Ave, but nice apt, and darn close to subway", 
+            "Pid": 33, 
+            "PostingID": "1336676", 
+            "Tags": [
+                "favorite"
+            ], 
+            "_id": "53da682c9ae7db1c0d09e15a",
+        {
+            "Address": "556 State St.", 
+            "Ask": "3650", 
+            "Bedrooms": "4/2/2", 
+            "Latitude": 40.685257999999997, 
+            "Longitude": -73.978864999999999, 
+            "PostedDate": "1390955817", 
+            "PostingID": "1336676", 
+            "PostingTitle": "556 State St.", 
+            "Source": "Shaw", 
+            "_id": "53da682c7ffce9eba9e3678c"
+        }
+        }, 
+        {
+#59
+301 E.  79th St.
+$4400
+terrace
+            "ImportDate": 1406922401, 
+            "Notes": "terrace", 
+            "Pid": 59, 
+            "PostingID": "1340322", 
+            "Tags": [
+                "favorite"
+            ], 
+            "_id": "53dbeea1a512d40116a84f87",
+        {
+            "Address": "301 E.  79th St.", 
+            "Ask": "4400", 
+            "Bedrooms": "4/2/2", 
+            "Latitude": 40.773330000000001, 
+            "Longitude": -73.954892000000001, 
+            "PostedDate": "1390955817", 
+            "PostingID": "1340322", 
+            "PostingTitle": "301 E.  79th St.", 
+            "Source": "Shaw", 
+            "_id": "53dbeea17ffce9eba9e367c0"
+        }
+        }, 
+        {
+#52
+230 Ashland Pl.
+$4300
+looks amazing!\nmbp: agreed!\n
+            "ImportDate": 1406822445, 
+            "Notes": "looks amazing!\nmbp: agreed!\n", 
+            "Pid": 52, 
+            "PostingID": "1337932", 
+            "Tags": [
+                "favorite"
+            ], 
+            "_id": "53da682c9ae7db1c0d09e16d",
+        {
+            "Address": "230 Ashland Pl.", 
+            "Ask": "4300", 
+            "Bedrooms": "5/2/2", 
+            "Latitude": 40.688251000000001, 
+            "Longitude": -73.978790000000004, 
+            "PostedDate": "1390955817", 
+            "PostingID": "1337932", 
+            "PostingTitle": "230 Ashland Pl.", 
+            "Source": "Shaw", 
+            "_id": "53da682c7ffce9eba9e3679f"
+        }
+        }, 
+        {
+#41
+80 De Kalb Ave
+$4395
+price may have increased to 4595\nmbp: agreed, I think rent is 4595.  Looks potentially amazing, tho, and it's a \
+            "ImportDate": 1406822445, 
+            "Notes": "price may have increased to 4595\nmbp: agreed, I think rent is 4595.  Looks potentially amazing, tho, and it's a \"no-fee\"", 
+            "Pid": 41, 
+            "PostingID": "1178266", 
+            "Tags": [
+                "favorite"
+            ], 
+            "_id": "53da682c9ae7db1c0d09e162",
+        {
+            "Address": "80 De Kalb Ave", 
+            "Ask": "4395", 
+            "Bedrooms": "5/2/2", 
+            "Latitude": 40.68967, 
+            "Longitude": -73.979905000000002, 
+            "PostedDate": "1390955817", 
+            "PostingID": "1178266", 
+            "PostingTitle": "80 De Kalb Ave", 
+            "Source": "Shaw", 
+            "_id": "53da682c7ffce9eba9e36794"
+        }
+        }, 
+        {
+#40
+150 Myrtle Ave
+$4300
+            "ImportDate": 1406822445, 
+            "Pid": 40, 
+            "PostingID": "1249472", 
+            "Tags": [
+                "favorite"
+            ], 
+            "_id": "53da682c9ae7db1c0d09e161",
+        {
+            "Address": "150 Myrtle Ave", 
+            "Ask": "4300", 
+            "Bedrooms": "4/2/2", 
+            "Latitude": 40.693286000000001, 
+            "Longitude": -73.982712000000006, 
+            "PostedDate": "1390955817", 
+            "PostingID": "1249472", 
+            "PostingTitle": "150 Myrtle Ave", 
+            "Source": "Shaw", 
+            "_id": "53da682c7ffce9eba9e36793"
+        }
+        }, 
+        {
+            "ImportDate": 1406922401, 
+            "Notes": "balcony, courtyard", 
+            "Pid": 65, 
+balcony, courtyard
+            "PostingID": "200652", 
+            "Tags": [
+                "favorite"
+            ], 
+            "_id": "53dbeea1a512d40116a84f8d",
+        {
+            "Address": "250 E.  40th St.", 
+            "Ask": "4500", 
+            "Bedrooms": "4/2/2", 
+            "Latitude": 40.748536000000001, 
+            "Longitude": -73.973483999999999, 
+            "PostedDate": "1390955817", 
+            "PostingID": "200652", 
+            "PostingTitle": "250 E.  40th St.", 
+            "Source": "Shaw", 
+            "_id": "53dbeea17ffce9eba9e367c6"
+        }
+        }, 
+        {
+#63
+330 E.  39th St.
+$3995
+0.28 to grand central
+            "ImportDate": 1406922401, 
+            "Notes": "0.28 to grand central", 
+            "Pid": 63, 
+            "PostingID": "1339430", 
+            "Tags": [
+                "favorite"
+            ], 
+            "_id": "53dbeea1a512d40116a84f8b",
+        {
+            "Address": "330 E.  39th St.", 
+            "Ask": "3995", 
+            "Bedrooms": "4/2/1.5", 
+            "Latitude": 40.747183999999997, 
+            "Longitude": -73.972449999999995, 
+            "PostedDate": "1390955817", 
+            "PostingID": "1339430", 
+            "PostingTitle": "330 E.  39th St.", 
+            "Source": "Shaw", 
+            "_id": "53dbeea17ffce9eba9e367c4"
+        }
+        }, 
+        {
+#62
+330 E.  38th St.
+$4500
+sweet living room with a view
+            "ImportDate": 1406922401, 
+            "Notes": "sweet living room with a view", 
+            "Pid": 62, 
+            "PostingID": "117004", 
+            "Tags": [
+                "favorite"
+            ], 
+            "_id": "53dbeea1a512d40116a84f8a",
+        {
+            "Address": "330 E.  38th St.", 
+            "Ask": "4500", 
+            "Bedrooms": "5/2/2", 
+            "Latitude": 40.746361, 
+            "Longitude": -73.972573999999994, 
+            "PostedDate": "1390955817", 
+            "PostingID": "117004", 
+            "PostingTitle": "330 E.  38th St.", 
+            "Source": "Shaw", 
+            "_id": "53dbeea17ffce9eba9e367c3"
+        }
+        }, 
+        {
+#20
+78 Douglass St.
+$4500
+close to Gowanus projects (1 block)
+            "ImportDate": 1406822445, 
+            "Notes": "close to Gowanus projects (1 block)", 
+            "Pid": 20, 
+            "PostingID": "994984", 
+            "Tags": [
+                "favorite"
+            ], 
+            "_id": "53da682c9ae7db1c0d09e14d",
+        {
+            "Address": "78 Douglass St.", 
+            "Ask": "4500", 
+            "Bedrooms": "4/2/2", 
+            "Latitude": 40.683107, 
+            "Longitude": -73.99203, 
+            "PostedDate": "1390955817", 
+            "PostingID": "994984", 
+            "PostingTitle": "78 Douglass St.", 
+            "Source": "Shaw", 
+            "_id": "53da682c7ffce9eba9e3677f"
+        }
+        }, 
+        {
+#50
+503 8th Ave
+$4200
+walkup; 4 BR!! Private terrace
+            "ImportDate": 1406822445, 
+            "Notes": "walkup; 4 BR!! Private terrace", 
+            "Pid": 50, 
+            "PostingID": "1340062", 
+            "Tags": [
+                "favorite"
+            ], 
+            "_id": "53da682c9ae7db1c0d09e16b",
+        {
+            "Address": "503 8th Ave", 
+            "Ask": "4200", 
+            "Bedrooms": "6/4/2", 
+            "Latitude": 40.668022000000001, 
+            "Longitude": -73.977311, 
+            "PostedDate": "1390955817", 
+            "PostingID": "1340062", 
+            "PostingTitle": "503 8th Ave", 
+            "Source": "Shaw", 
+            "_id": "53da682c7ffce9eba9e3679d"
+        }
+        }, 
+        {
+#51
+176 14th St.
+$4300
+huge; looks amazing!
+            "ImportDate": 1406822445, 
+            "Notes": "huge; looks amazing!", 
+            "Pid": 51, 
+            "PostingID": "1330815", 
+            "Tags": [
+                "favorite"
+            ], 
+            "_id": "53da682c9ae7db1c0d09e16c",
+        {
+            "Address": "176 14th St.", 
+            "Ask": "4300", 
+            "Bedrooms": "4/2/2.5", 
+            "Latitude": 40.667487999999999, 
+            "Longitude": -73.992078000000006, 
+            "PostedDate": "1390955817", 
+            "PostingID": "1330815", 
+            "PostingTitle": "176 14th St.", 
+            "Source": "Shaw", 
+            "_id": "53da682c7ffce9eba9e3679e"
+        }
+        }, 
+        {
+#49
+343 4th Ave
+$4100
+balcony!; only one pic
+            "ImportDate": 1406822445, 
+            "Notes": "balcony!; only one pic", 
+            "Pid": 49, 
+            "PostingID": "1337787", 
+            "Tags": [
+                "favorite"
+            ], 
+            "_id": "53da682c9ae7db1c0d09e16a",
+        {
+            "Address": "343 4th Ave", 
+            "Ask": "4100", 
+            "Bedrooms": "4/2/2", 
+            "Latitude": 40.672666999999997, 
+            "Longitude": -73.986333999999999, 
+            "PostedDate": "1390955817", 
+            "PostingID": "1337787", 
+            "PostingTitle": "343 4th Ave", 
+            "Source": "Shaw", 
+            "_id": "53da682c7ffce9eba9e3679c"
+        }
+        }, 
+        {
+#31
+100 Luquer St.
+$4500
+0.33 mi to subway; amazing view with balcony
+            "ImportDate": 1406822445, 
+            "Notes": "0.33 mi to subway; amazing view with balcony", 
+            "Pid": 31, 
+            "PostingID": "1081012", 
+            "Tags": [
+                "favorite"
+            ], 
+            "_id": "53da682c9ae7db1c0d09e158",
+        {
+            "Address": "100 Luquer St.", 
+            "Ask": "4500", 
+            "Bedrooms": "4/2/2", 
+            "Latitude": 40.677912999999997, 
+            "Longitude": -74.001265000000004, 
+            "PostedDate": "1390955817", 
+            "PostingID": "1081012", 
+            "PostingTitle": "100 Luquer St.", 
+            "Source": "Shaw", 
+            "_id": "53da682c7ffce9eba9e3678a"
+        }
+        }, 
+        {
+#14
+100 Luquer St.
+$4000
+every apartment has a balcony! maybe noisy?
+            "ImportDate": 1406822445, 
+            "Notes": "every apartment has a balcony! maybe noisy?", 
+            "Pid": 14, 
+            "PostingID": "1068343", 
+            "Tags": [
+                "favorite"
+            ], 
+            "_id": "53da682c9ae7db1c0d09e147",
+        {
+            "Address": "100 Luquer St.", 
+            "Ask": "4000", 
+            "Bedrooms": "4/2/2", 
+            "Latitude": 40.677912999999997, 
+            "Longitude": -74.001265000000004, 
+            "PostedDate": "1390955817", 
+            "PostingID": "1068343", 
+            "PostingTitle": "100 Luquer St.", 
+            "Source": "Shaw", 
+            "_id": "53da682c7ffce9eba9e36771"
+        }
+        }, 
+        {
+#39
+343 4th Ave
+$4200
+            "ImportDate": 1406822445, 
+            "Pid": 39, 
+            "PostingID": "1338805", 
+            "Tags": [
+                "favorite"
+            ], 
+            "_id": "53da682c9ae7db1c0d09e160",
+        {
+            "Address": "343 4th Ave", 
+            "Ask": "4200", 
+            "Bedrooms": "4/2/2", 
+            "Latitude": 40.672666999999997, 
+            "Longitude": -73.986333999999999, 
+            "PostedDate": "1390955817", 
+            "PostingID": "1338805", 
+            "PostingTitle": "343 4th Ave", 
+            "Source": "Shaw", 
+            "_id": "53da682c7ffce9eba9e36792"
+        }
+        }, 
+        {
+            "ImportDate": 1406922401, 
+            "Notes": "no fee: http://streeteasy.com/building/the-chesapeake/27c\n", 
+            "Pid": 64, 
+no fee: http://streeteasy.com/building/the-chesapeake/27c\n
+            "PostingID": "39681", 
+            "Tags": [
+                "favorite"
+            ], 
+            "_id": "53dbeea1a512d40116a84f8c",
+        {
+            "Address": "345 E.  94th St.", 
+            "Ask": "4295", 
+            "Bedrooms": "4/2/2", 
+            "Latitude": 40.782331999999997, 
+            "Longitude": -73.945871999999994, 
+            "PostedDate": "1390955817", 
+            "PostingID": "39681", 
+            "PostingTitle": "345 E.  94th St.", 
+            "Source": "Shaw", 
+            "_id": "53dbeea17ffce9eba9e367c5"
+        }
+        }
+
+
+PREFAVS
+        {
+#55
+341 E.  62nd St.
+$4200
+            "ImportDate": 1406922401, 
+            "Pid": 55, 
+            "PostingID": "706587", 
+            "Tags": [
+                "prefav"
+            ], 
+            "_id": "53dbeea1a512d40116a84f83",
+        {
+            "Address": "341 E.  62nd St.", 
+            "Ask": "4200", 
+            "Bedrooms": "4/2/2", 
+            "Latitude": 40.762073000000001, 
+            "Longitude": -73.961393000000001, 
+            "PostedDate": "1390955817", 
+            "PostingID": "706587", 
+            "PostingTitle": "341 E.  62nd St.", 
+            "Source": "Shaw", 
+            "_id": "53dbeea17ffce9eba9e367bc"
+        }
+        }, 
+        {
+            "ImportDate": 1406922401, 
+            "Notes": "nice master; big apt", 
+            "Pid": 56, 
+nice master; big apt
+            "PostingID": "1326154", 
+            "Tags": [
+                "prefav"
+            ], 
+            "_id": "53dbeea1a512d40116a84f84",
+        {
+            "Address": "225 E.  36th St.", 
+            "Ask": "4299", 
+            "Bedrooms": "4/2/2", 
+            "Latitude": 40.746656999999999, 
+            "Longitude": -73.975801000000004, 
+            "PostedDate": "1390955817", 
+            "PostingID": "1326154", 
+            "PostingTitle": "225 E.  36th St.", 
+            "Source": "Shaw", 
+            "_id": "53dbeea17ffce9eba9e367bd"
+        }
+        }, 
+        {
+#28
+225 Schermerhorn St.
+$4215
+            "ImportDate": 1406822445, 
+            "Pid": 28, 
+            "PostingID": "1324769", 
+            "Tags": [
+                "prefav"
+            ], 
+            "_id": "53da682c9ae7db1c0d09e155",
+        {
+            "Address": "225 Schermerhorn St.", 
+            "Ask": "4215", 
+            "Bedrooms": "4/2/2", 
+            "Latitude": 40.688803999999998, 
+            "Longitude": -73.985142999999994, 
+            "PostedDate": "1390955817", 
+            "PostingID": "1324769", 
+            "PostingTitle": "225 Schermerhorn St.", 
+            "Source": "Shaw", 
+            "_id": "53da682c7ffce9eba9e36787"
+        }
+        }, 
+        {
+            "ImportDate": 1406822445, 
+            "Notes": "maybe - expensive and has small BRs", 
+            "Pid": 53, 
+maybe - expensive and has small BRs
+            "PostingID": "1300769", 
+            "Tags": [
+                "prefav"
+            ], 
+            "_id": "53da682c9ae7db1c0d09e16e",
+        {
+            "Address": "487 Keap St.", 
+            "Ask": "4500", 
+            "Bedrooms": "5/2/2", 
+            "Latitude": 40.713346999999999, 
+            "Longitude": -73.952319000000003, 
+            "PostedDate": "1390955817", 
+            "PostingID": "1300769", 
+            "PostingTitle": "487 Keap St.", 
+            "Source": "Shaw", 
+            "_id": "53da682c7ffce9eba9e367a0"
+        }
+        }, 
+        {
+#19
+80 Metropolitan Ave
+$4475
+expensive, farther from subway
+            "ImportDate": 1406822445, 
+            "Notes": "expensive, farther from subway", 
+            "Pid": 19, 
+            "PostingID": "1244400", 
+            "Tags": [
+                "prefav"
+            ], 
+            "_id": "53da682c9ae7db1c0d09e14c",
+        {
+            "Address": "80 Metropolitan Ave", 
+            "Ask": "4475", 
+            "Bedrooms": "4/2/2", 
+            "Latitude": 40.717038000000002, 
+            "Longitude": -73.963927999999996, 
+            "PostedDate": "1390955817", 
+            "PostingID": "1244400", 
+            "PostingTitle": "80 Metropolitan Ave", 
+            "Source": "Shaw", 
+            "_id": "53da682c7ffce9eba9e3677e"
+        }
+        }, 
+        {
+#48
+487 Keap St.
+$4050
+a little smaller + cheaper than other avail apt; noise windows but close to highway
+            "ImportDate": 1406822445, 
+            "Notes": "a little smaller + cheaper than other avail apt; noise windows but close to highway", 
+            "Pid": 48, 
+            "PostingID": "1339240", 
+            "Tags": [
+                "prefav"
+            ], 
+            "_id": "53da682c9ae7db1c0d09e169",
+        {
+            "Address": "487 Keap St.", 
+            "Ask": "4050", 
+            "Bedrooms": "4/2/2", 
+            "Latitude": 40.713346999999999, 
+            "Longitude": -73.952319000000003, 
+            "PostedDate": "1390955817", 
+            "PostingID": "1339240", 
+            "PostingTitle": "487 Keap St.", 
+            "Source": "Shaw", 
+            "_id": "53da682c7ffce9eba9e3679b"
+        }
+        }, 
+        {
+#30
+306 Gold St.
+$4400
+expensive
+            "ImportDate": 1406822445, 
+            "Notes": "expensive", 
+            "Pid": 30, 
+            "PostingID": "1331243", 
+            "Tags": [
+                "prefav"
+            ], 
+            "_id": "53da682c9ae7db1c0d09e157",
+        {
+            "Address": "306 Gold St.", 
+            "Ask": "4400", 
+            "Bedrooms": "4.5/2/2", 
+            "Latitude": 40.695023999999997, 
+            "Longitude": -73.983507000000003, 
+            "PostedDate": "1390955817", 
+            "PostingID": "1331243", 
+            "PostingTitle": "306 Gold St.", 
+            "Source": "Shaw", 
+            "_id": "53da682c7ffce9eba9e36789"
+        }
+        }, 
+        {
+#44
+218 Myrtle Ave
+$2900
+on the smaller side
+            "ImportDate": 1406822445, 
+            "Notes": "on the smaller side", 
+            "Pid": 44, 
+            "PostingID": "800942", 
+            "Tags": [
+                "prefav"
+            ], 
+            "_id": "53da682c9ae7db1c0d09e165",
+        {
+            "Address": "218 Myrtle Ave", 
+            "Ask": "2900", 
+            "Bedrooms": "4/2/2", 
+            "Latitude": 40.693370999999999, 
+            "Longitude": -73.979709999999997, 
+            "PostedDate": "1390955817", 
+            "PostingID": "800942", 
+            "PostingTitle": "218 Myrtle Ave", 
+            "Source": "Shaw", 
+            "_id": "53da682c7ffce9eba9e36797"
+        }
+        }, 
+        {
+#21
+25 Bergen St.
+$4500
+expensive; prob gone - showing since 7/7
+            "ImportDate": 1406822445, 
+            "Notes": "expensive; prob gone - showing since 7/7", 
+            "Pid": 21, 
+            "PostingID": "888547", 
+            "Tags": [
+                "prefav"
+            ], 
+            "_id": "53da682c9ae7db1c0d09e14e",
+        {
+            "Address": "25 Bergen St.", 
+            "Ask": "4500", 
+            "Bedrooms": "3.5/2/2", 
+            "Latitude": 40.687472, 
+            "Longitude": -73.992275000000006, 
+            "PostedDate": "1390955817", 
+            "PostingID": "888547", 
+            "PostingTitle": "25 Bergen St.", 
+            "Source": "Shaw", 
+            "_id": "53da682c7ffce9eba9e36780"
+        }
+        }, 
+        {
+#26
+225 Schermerhorn St.
+$4095
+no photos
+            "ImportDate": 1406822445, 
+            "Notes": "no photos", 
+            "Pid": 26, 
+            "PostingID": "1302090", 
+            "Tags": [
+                "prefav"
+            ], 
+            "_id": "53da682c9ae7db1c0d09e153",
+        {
+            "Address": "225 Schermerhorn St.", 
+            "Ask": "4095", 
+            "Bedrooms": "4/2/2", 
+            "Latitude": 40.688803999999998, 
+            "Longitude": -73.985142999999994, 
+            "PostedDate": "1390955817", 
+            "PostingID": "1302090", 
+            "PostingTitle": "225 Schermerhorn St.", 
+            "Source": "Shaw", 
+            "_id": "53da682c7ffce9eba9e36785"
+        }
+        }, 
+        {
+#29
+225 Schermerhorn St.
+$4345
+no photos
+            "ImportDate": 1406822445, 
+            "Notes": "no photos", 
+            "Pid": 29, 
+            "PostingID": "1322596", 
+            "Tags": [
+                "prefav"
+            ], 
+            "_id": "53da682c9ae7db1c0d09e156",
+        {
+            "Address": "225 Schermerhorn St.", 
+            "Ask": "4345", 
+            "Bedrooms": "4/2/2", 
+            "Latitude": 40.688803999999998, 
+            "Longitude": -73.985142999999994, 
+            "PostedDate": "1390955817", 
+            "PostingID": "1322596", 
+            "PostingTitle": "225 Schermerhorn St.", 
+            "Source": "Shaw", 
+            "_id": "53da682c7ffce9eba9e36788"
+        }
+        }, 
+        {
+#13
+66 Rockwell Pl.
+$3869
+no photos; great location
+            "ImportDate": 1406822445, 
+            "Notes": "no photos; great location", 
+            "Pid": 13, 
+            "PostingID": "1330932", 
+            "Tags": [
+                "prefav"
+            ], 
+            "_id": "53da682c9ae7db1c0d09e146",
+        {
+            "Address": "66 Rockwell Pl.", 
+            "Ask": "3869", 
+            "Bedrooms": "4/2/2", 
+            "Latitude": 40.688091999999997, 
+            "Longitude": -73.979273000000006, 
+            "PostedDate": "1390955817", 
+            "PostingID": "1330932", 
+            "PostingTitle": "66 Rockwell Pl.", 
+            "Source": "Shaw", 
+            "_id": "53da682c7ffce9eba9e3676e"
+        }
+        }, 
+
+
+
+        {
+#10
+446 Kent Ave
+$4500
+1414 sq ft, but expensive & far from subway\nmbp: I think it's too far from subway; also, in HEZ 2
+            "ImportDate": 1406822445, 
+            "Notes": "1414 sq ft, but expensive & far from subway\nmbp: I think it's too far from subway; also, in HEZ 2", 
+            "Pid": 10, 
+            "PostingID": "360895", 
+            "Tags": [
+                "prefav"
+            ], 
+            "_id": "53da682c9ae7db1c0d09e143",
+        {
+            "Address": "446 Kent Ave", 
+            "Ask": "4500", 
+            "Bedrooms": "4/2/2", 
+            "Latitude": 40.709211000000003, 
+            "Longitude": -73.969130000000007, 
+            "PostedDate": "1390955817", 
+            "PostingID": "360895", 
+            "PostingTitle": "446 Kent Ave", 
+            "Source": "Shaw", 
+            "_id": "53da682c7ffce9eba9e36776"
+        }
+        }, 
+        {
+#18
+440 Kent Ave
+$4300
+expensive and not too close to subway, but awesome, huge apt\nmbp: I think it's too far from subway; also, in HEZ 2\n
+            "ImportDate": 1406822445, 
+            "Notes": "expensive and not too close to subway, but awesome, huge apt\nmbp: I think it's too far from subway; also, in HEZ 2\n", 
+            "Pid": 18, 
+            "PostingID": "1069682", 
+            "Tags": [
+                "prefav"
+            ], 
+            "_id": "53da682c9ae7db1c0d09e14b",
+        {
+            "Address": "440 Kent Ave", 
+            "Ask": "4300", 
+            "Bedrooms": "4/2/2", 
+            "Latitude": 40.709180000000003, 
+            "Longitude": -73.969325999999995, 
+            "PostedDate": "1390955817", 
+            "PostingID": "1069682", 
+            "PostingTitle": "440 Kent Ave", 
+            "Source": "Shaw", 
+            "_id": "53da682c7ffce9eba9e3677d"
+        }
+        }, 
+        {
+#4
+349 Metropolitan Ave
+$4000
+kind of weird floor plan\nmbp: agreed, and 2nd bedroom is very small\n
+            "ImportDate": 1406822445, 
+            "Notes": "kind of weird floor plan\nmbp: agreed, and 2nd bedroom is very small\n", 
+            "Pid": 4, 
+            "PostingID": "828327", 
+            "Tags": [
+                "prefav"
+            ], 
+            "_id": "53da682c9ae7db1c0d09e13d",
+        {
+            "Address": "349 Metropolitan Ave", 
+            "Ask": "4000", 
+            "Bedrooms": "5/2/2", 
+            "Latitude": 40.714221999999999, 
+            "Longitude": -73.956387000000007, 
+            "PostedDate": "1390955817", 
+            "PostingID": "828327", 
+            "PostingTitle": "349 Metropolitan Ave", 
+            "Source": "Shaw", 
+            "_id": "53da682c7ffce9eba9e3676f"
+        }
+        }, 
+        {
+#57
+340 E.  93rd St.
+$3900
+lots of amenities; bldg looks great; 0.32 from subway
+            "ImportDate": 1406922401, 
+            "Notes": "lots of amenities; bldg looks great; 0.32 from subway", 
+            "Pid": 57, 
+            "PostingID": "366614", 
+            "Tags": [
+                "prefav"
+            ], 
+            "_id": "53dbeea1a512d40116a84f85",
+        {
+            "Address": "340 E.  93rd St.", 
+            "Ask": "3900", 
+            "Bedrooms": "4.5/2/2", 
+            "Latitude": 40.781263000000003, 
+            "Longitude": -73.946719999999999, 
+            "PostedDate": "1390955817", 
+            "PostingID": "366614", 
+            "PostingTitle": "340 E.  93rd St.", 
+            "Source": "Shaw", 
+            "_id": "53dbeea17ffce9eba9e367be"
+        }
+        }, 
+
+
+        {
+#58
+534 Third Ave
+$4200
+walkup - don't know what floor
+            "ImportDate": 1406922401, 
+            "Notes": "walkup - don't know what floor", 
+            "Pid": 58, 
+            "PostingID": "31674", 
+            "Tags": [
+                "prefav"
+            ], 
+            "_id": "53dbeea1a512d40116a84f86",
+        {
+            "Address": "534 Third Ave", 
+            "Ask": "4200", 
+            "Bedrooms": "4/2/2", 
+            "Latitude": 40.746845999999998, 
+            "Longitude": -73.977661999999995, 
+            "PostedDate": "1390955817", 
+            "PostingID": "31674", 
+            "PostingTitle": "534 Third Ave", 
+            "Source": "Shaw", 
+            "_id": "53dbeea17ffce9eba9e367bf"
+        }
+        }, 
+        {
+#35
+481 12th St.
+$3800
+walkup; don't know which floor; not much info; pretty building with turret windows; close to prospect park
+            "ImportDate": 1406822445, 
+            "Notes": "walkup; don't know which floor; not much info; pretty building with turret windows; close to prospect park", 
+            "Pid": 35, 
+            "PostingID": "1330845", 
+            "Tags": [
+                "prefav"
+            ], 
+            "_id": "53da682c9ae7db1c0d09e15c",
+        {
+            "Address": "481 12th St.", 
+            "Ask": "3800", 
+            "Bedrooms": "4/2/1.5", 
+            "Latitude": 40.663809000000001, 
+            "Longitude": -73.980106000000006, 
+            "PostedDate": "1390955817", 
+            "PostingID": "1330845", 
+            "PostingTitle": "481 12th St.", 
+            "Source": "Shaw", 
+            "_id": "53da682c7ffce9eba9e3678e"
+        }
+        }, 
+        {
+#25
+204 Huntington St.
+$3950
+0.3 mi from subway
+            "ImportDate": 1406822445, 
+            "Notes": "0.3 mi from subway", 
+            "Pid": 25, 
+            "PostingID": "774695", 
+            "Tags": [
+                "prefav"
+            ], 
+            "_id": "53da682c9ae7db1c0d09e152",
+        {
+            "Address": "204 Huntington St.", 
+            "Ask": "3950", 
+            "Bedrooms": "4/2/2", 
+            "Latitude": 40.675294999999998, 
+            "Longitude": -73.998002, 
+            "PostedDate": "1390955817", 
+            "PostingID": "774695", 
+            "PostingTitle": "204 Huntington St.", 
+            "Source": "Shaw", 
+            "_id": "53da682c7ffce9eba9e36784"
+        }
+        }, 
+        {
+#7
+162 5th Ave
+$4250
+walkup
+            "ImportDate": 1406822445, 
+            "Notes": "walkup", 
+            "Pid": 7, 
+            "PostingID": "409697", 
+            "Tags": [
+                "prefav"
+            ], 
+            "_id": "53da682c9ae7db1c0d09e140",
+        {
+            "Address": "162 5th Ave", 
+            "Ask": "4250", 
+            "Bedrooms": "5/3/2", 
+            "Latitude": 40.677930000000003, 
+            "Longitude": -73.979748000000001, 
+            "PostedDate": "1390955817", 
+            "PostingID": "409697", 
+            "PostingTitle": "162 5th Ave", 
+            "Source": "Shaw", 
+            "_id": "53da682c7ffce9eba9e36773"
+        }
+        }, 
